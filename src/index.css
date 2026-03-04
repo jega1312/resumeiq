@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/public/fonts/Inter18pt-Regular.eot");
+  src:
+    url("/public/fonts/Inter18pt-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/Inter18pt-Regular.woff2") format("woff2"),
+    url("/public/fonts/Inter18pt-Regular.woff") format("woff"),
+    url("/public/fonts/Inter18pt-Regular.ttf") format("truetype"),
+    url("/public/fonts/Inter18pt-Regular.svg#Inter18pt-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
