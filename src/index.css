@@ -6,6 +6,22 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 10s linear infinite;
+}
+
+.animate-spin-medium {
+  animation: spin 6s linear infinite;
+}
+
+.animate-spin-fast {
+  animation: spin 4s linear infinite;
 }
 
 @font-face {

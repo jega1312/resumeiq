@@ -1,0 +1,47 @@
+import React from "react";
+import { FaChartLine } from "react-icons/fa";
+
+function Hero() {
+  return (
+    <section
+      id="hero"
+      className="relative bg-linear-to-r from-[#03001C] to-[#1b1042] min-h-screen flex justify-center items-center"
+    >
+      {/* Orb Glow Container */}
+      <div className="flex w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[375px] md:h-[375px] xl:w-[450px] xl:h-[450px] justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
+        <div class="w-[110%] h-[110%] shadow-lg shadow-pink-500 bg-transparent rounded-full absolute animate-spin-slow"></div>
+        <div class="w-[108%] h-[108%] shadow-lg shadow-violet-500 bg-transparent rounded-full absolute rotate-90 animate-spin-medium"></div>
+        <div class="w-[106%] h-[106%] shadow-lg shadow-cyan-500 bg-transparent rounded-full absolute rotate-180 animate-spin-fast"></div>
+      </div>
+
+      <div className="flex flex-col justify-center items-center gap-5 xl:gap-7 z-30">
+        <span className="bg-purple-950 border-[#47227b] border-2 py-2 rounded-full text-white text-xs md:text-sm  font-inter font-normal flex justify-center items-center px-5 md:px-0 md:w-[35%] lg:w-[27%] mx-auto gap-2">
+          <FaChartLine size={20} />
+          50,000+ Resumes Optimized
+        </span>
+
+        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center text-white font-inter font-bold md:leading-20">
+          Transform Your Resume With <br />
+          <span className="bg-linear-to-r from-purple-500 to-blue-600 bg-clip-text text-transparent text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+            AI Intelligence
+          </span>
+        </h1>
+
+        <p className="text-sm sm:text-lg lg:text-xl text-center text-white/70 font-inter font-light mx-auto w-[70%] md:w-[60%] lg:w-[50%]">
+          Get personalized insights, ATS optimization & expert recommendations
+          to land your dream job faster.
+        </p>
+
+        {/* Get Started Desktop Button */}
+        <button
+          type="button"
+          className="py-2 px-5 sm:px-0 text-sm sm:text-base sm:w-[20%] lg:w-[15%] border-white border-2 bg-purple-500 font-inter font-semibold text-white/90 hover:text-white rounded-lg hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer"
+        >
+          Get Started
+        </button>
+      </div>
+    </section>
+  );
+}
+
+export default Hero;
