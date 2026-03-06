@@ -21,7 +21,7 @@ function Navbar() {
   }, [menuOpen]);
 
   return (
-    <nav className="flex justify-between flex-wrap items-center py-6 px-8 lg:px-10 bg-linear-to-r from-[#03001C] to-[#1b1042] ">
+    <nav className="sticky top-0 flex justify-between flex-wrap items-center py-6 px-8 lg:px-10 bg-linear-to-r from-[#03001C] to-[#1b1042] z-50">
       {/* Logo Container */}
       <a className="flex gap-2 items-center hover:cursor-pointer" href="#hero">
         <img
