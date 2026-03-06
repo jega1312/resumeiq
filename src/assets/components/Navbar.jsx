@@ -15,9 +15,9 @@ function Navbar() {
       document.body.classList.remove("overflow-hidden");
     }
 
-    return ()=>{
+    return () => {
       document.body.classList.remove("overflow-hidden");
-    }
+    };
   }, [menuOpen]);
 
   return (
@@ -27,9 +27,9 @@ function Navbar() {
         <img
           src="/public/images/logo.png"
           alt="Logo Image"
-          className="size-10 md:size-12 rounded-lg border-black"
+          className="size-10 md:size-11 rounded-lg border-black"
         />
-        <h1 className="text-base md:text-xl font-bold font-inter text-white/75 hover:text-white transition duration-300 ease-in-out">
+        <h1 className="text-base md:text-lg font-bold font-inter text-white transition duration-300 ease-in-out">
           ResumeIQ
         </h1>
       </a>
@@ -53,9 +53,9 @@ function Navbar() {
 
       {/* Menu Mobile Dropdown */}
       <div
-        className={`min-h-screen ${menuOpen ? "flex" : "hidden"} lg:hidden w-full flex-col items-start justify-center gap-10 transition duration-300 ease-in-out`}
+        className={`min-h-screen ${menuOpen ? "flex" : "hidden"} lg:hidden w-full flex-col items-start justify-center gap-7 transition duration-300 ease-in-out`}
       >
-        <ul className="flex flex-col items-start justify-center gap-10 list-none">
+        <ul className="flex flex-col items-start justify-center gap-5 list-none">
           <li>
             <a
               href="#process"
@@ -85,6 +85,15 @@ function Navbar() {
           </li>
           <li>
             <a
+              href="#testimonials"
+              className="no-underline font-inter font-medium text-4xl relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
+            >
+              Testimonials
+              <span className="h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out"></span>
+            </a>
+          </li>
+          <li>
+            <a
               href="#faq"
               className="no-underline font-inter font-medium text-4xl relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
             >
@@ -94,12 +103,12 @@ function Navbar() {
           </li>
         </ul>
 
-        {/* Get Started Mobile Button */}
+        {/* Register Now Mobile Button */}
         <button
           type="button"
           className="py-3 px-5 bg-purple-500 font-inter font-medium text-white/90 hover:text-white text-xl rounded-sm hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer"
         >
-          Get Started
+          Register Now
         </button>
       </div>
 
@@ -134,6 +143,15 @@ function Navbar() {
         </li>
         <li>
           <a
+            href="#testimonials"
+            className="no-underline font-inter font-medium text-lg relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
+          >
+            Testimonials
+            <span className="h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out"></span>
+          </a>
+        </li>
+        <li>
+          <a
             href="#faq"
             className="no-underline font-inter font-medium text-lg relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
           >
@@ -143,12 +161,12 @@ function Navbar() {
         </li>
       </ul>
 
-      {/* Get Started Desktop Button */}
+      {/* Register Now Desktop Button */}
       <button
         type="button"
         className="hidden lg:block py-2 px-4 bg-purple-500 font-inter font-medium text-white/90 hover:text-white rounded-sm hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer"
       >
-        Get Started
+        Register Now
       </button>
     </nav>
   );
