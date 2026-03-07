@@ -11,7 +11,7 @@ function Hero() {
       icon: <IoCheckmarkCircle size={40} className="text-green-500" />,
       stat: "98%",
       label: "Success Rate",
-      border: "lg:border-r border-fuchsia-950 border-b lg:border-b-0",
+      border: "lg:border-r border-purple-500 border-b lg:border-b-0",
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ function Hero() {
       icon: <MdAutoGraph size={40} className="text-yellow-500" />,
       stat: "3x",
       label: "More Interviews",
-      border: "lg:border-l border-fuchsia-950 border-t lg:border-t-0",
+      border: "lg:border-l border-purple-500 border-t lg:border-t-0",
     },
   ];
 
@@ -70,8 +70,8 @@ function Hero() {
         </div>
       </section>
 
-      <section className="bg-linear-to-r from-[#03001C] to-[#1b1042] pb-10">
-        <div className="bg-slate-950 border-fuchsia-950 border grid grid-cols-1 lg:grid-cols-3 mx-auto w-[80%] rounded-lg shadow-2xl">
+      <section className="bg-linear-to-r from-[#03001C] to-[#1b1042]">
+        <div className="bg-slate-950 border-purple-500 border grid grid-cols-1 lg:grid-cols-3 mx-auto w-[70%] rounded-lg shadow-2xl">
           {stats.map((stat) => (
             <div
               key={stat.id}
@@ -81,7 +81,7 @@ function Hero() {
               <h1 className="text-lg md:text-xl font-inter font-semibold text-white">
                 {stat.stat}
               </h1>
-              <p className="text-base md:text-lg font-inter font-normal text-white">
+              <p className="text-base font-inter font-normal text-white">
                 {stat.label}
               </p>
             </div>

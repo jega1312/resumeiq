@@ -3,6 +3,7 @@ import React from "react";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleOpen = () => {
     setMenuOpen(!menuOpen);
@@ -20,8 +21,26 @@ function Navbar() {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="sticky top-0 flex justify-between flex-wrap items-center py-6 px-8 lg:px-10 bg-linear-to-r from-[#03001C] to-[#1b1042] z-50">
+    <nav
+      className={`sticky top-0 flex justify-between flex-wrap items-center py-6 px-8 lg:px-10 bg-linear-to-r from-[#03001C] to-[#1b1042] z-50 border-b border-transparent transition duration-300 ease-in-out ${scrolled ? "border-b-purple-500/20 bg-" : ""} `}
+    >
       {/* Logo Container */}
       <a className="flex gap-2 items-center hover:cursor-pointer" href="#hero">
         <img
@@ -58,10 +77,10 @@ function Navbar() {
         <ul className="flex flex-col items-start justify-center gap-5 list-none">
           <li>
             <a
-              href="#process"
+              href="#howitworks"
               className="no-underline font-inter font-medium text-4xl relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
             >
-              Process
+              How It Works
               <span className="h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out"></span>
             </a>
           </li>
@@ -116,10 +135,10 @@ function Navbar() {
       <ul className="hidden lg:flex items-center gap-4 list-none">
         <li>
           <a
-            href="#process"
+            href="#howitworks"
             className="no-underline font-inter font-medium text-lg relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
           >
-            Process
+            How It Works
             <span className="h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out"></span>
           </a>
         </li>
