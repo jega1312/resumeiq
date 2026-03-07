@@ -39,18 +39,18 @@ function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 flex justify-between flex-wrap items-center py-6 px-8 lg:px-10 bg-linear-to-r from-[#03001C] to-[#1b1042] z-50 border-b border-transparent transition duration-300 ease-in-out ${scrolled ? "border-b-purple-500/20 bg-" : ""} `}
+      className={`sticky top-0 flex justify-between flex-wrap items-center py-6 px-8 lg:px-10 bg-linear-to-r from-[#03001C] to-[#1b1042] z-50 border-b border-transparent transition duration-300 ease-in-out ${scrolled ? "border-b-purple-500/20" : ""} `}
     >
       {/* Logo Container */}
       <a className="flex gap-2 items-center hover:cursor-pointer" href="#hero">
         <img
-          src="/public/images/logo.png"
+          src="/images/logo.png"
           alt="Logo Image"
           className="size-10 md:size-11 rounded-lg border-black"
         />
-        <h1 className="text-base md:text-lg font-bold font-inter text-white transition duration-300 ease-in-out">
+        <span className="text-base md:text-lg font-bold font-inter text-white transition duration-300 ease-in-out">
           ResumeIQ
-        </h1>
+        </span>
       </a>
 
       {/* Hamburger Menu */}
@@ -72,7 +72,7 @@ function Navbar() {
 
       {/* Menu Mobile Dropdown */}
       <div
-        className={`min-h-screen ${menuOpen ? "flex" : "hidden"} lg:hidden w-full flex-col items-start justify-center gap-7 transition duration-300 ease-in-out`}
+        className={`h-[calc(100vh-93px)] ${menuOpen ? "flex" : "hidden"} lg:hidden w-full flex-col items-start justify-center gap-7 transition duration-300 ease-in-out`}
       >
         <ul className="flex flex-col items-start justify-center gap-5 list-none">
           <li>
