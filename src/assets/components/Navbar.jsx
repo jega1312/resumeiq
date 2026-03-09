@@ -47,12 +47,12 @@ function Navbar() {
           alt="Logo Image"
           className="size-10 md:size-11"
         /> */}
-        <h1 className="text-base md:text-xl font-bold font-inter text-white w-full">
+        <span className="text-base md:text-xl font-bold font-inter text-white w-full">
           Resume
           <span className="bg-linear-to-r from-purple-500 to-blue-600 bg-clip-text text-transparent">
             IQ
           </span>
-        </h1>
+        </span>
       </a>
 
       {/* Hamburger Menu */}
