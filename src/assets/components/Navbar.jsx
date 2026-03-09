@@ -38,18 +38,21 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full top-0 flex justify-between flex-wrap items-center py-6 px-8 lg:px-10 bg-linear-to-r from-[#03001C] to-[#1b1042] z-50 border-b border-transparent transition duration-300 ease-in-out ${scrolled ? "border-b-purple-500/20" : ""} `}
+      className={`fixed w-full top-0 flex justify-between flex-wrap items-center py-6 px-8 lg:px-10  z-50 border-b border-transparent transition duration-300 ease-in-out ${scrolled ? "border-b-purple-500/10 bg-[#03001C]/20 backdrop-blur-md" : "bg-linear-to-r from-[#03001C] to-[#1b1042]"} `}
     >
       {/* Logo Container */}
       <a className="flex gap-2 items-center hover:cursor-pointer" href="#hero">
-        <img
+        {/* <img
           src="/images/logo.png"
           alt="Logo Image"
-          className="size-10 md:size-11 rounded-lg border-black"
-        />
-        <span className="text-base md:text-lg font-bold font-inter text-white transition duration-300 ease-in-out">
-          ResumeIQ
-        </span>
+          className="size-10 md:size-11"
+        /> */}
+        <h1 className="text-base md:text-xl font-bold font-inter text-white w-full">
+          Resume
+          <span className="bg-linear-to-r from-purple-500 to-blue-600 bg-clip-text text-transparent">
+            IQ
+          </span>
+        </h1>
       </a>
 
       {/* Hamburger Menu */}

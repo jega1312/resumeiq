@@ -49,7 +49,7 @@ function Pricing() {
       className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 flex flex-col gap-14"
     >
       <div className="flex flex-col justify-center items-center gap-5">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl  font-inter text-white font-bold">
           Pricing
         </h2>
         <p className="text-base md:text-lg font-inter text-center text-white/50 w-[90%] sm:w-full">
@@ -62,7 +62,7 @@ function Pricing() {
         {plans.map((plan) => (
           <div
             key={plan.id}
-            className="relative flex flex-col justify-between items-center gap-10 p-10 bg-slate-950 mx-auto rounded-3xl border border-purple-500 hover:border-white w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group shadows-2xl hover:scale-105"
+            className="relative flex flex-col justify-between items-center gap-10 p-10 bg-slate-950 mx-auto rounded-3xl border border-purple-500 hover:border-white w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group shadow-2xl hover:scale-105"
           >
             <div className="flex flex-col items-center gap-10">
               <div className="flex flex-col items-center justify-center gap-5">
@@ -73,9 +73,9 @@ function Pricing() {
                   className="h-20 w-auto"
                 />
                 {/* Plan Title */}
-                <h1 className="text-white font-inter font-bold text-xl">
+                <h3 className="text-white font-inter font-bold text-xl">
                   {plan.name}
-                </h1>
+                </h3>
               </div>
               {/* Plan Benefits */}
               <ul className="flex flex-col gap-5 items-start justify-center">

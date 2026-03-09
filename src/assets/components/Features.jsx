@@ -46,10 +46,13 @@ const features = [
 
 function Features() {
   return (
-    <section className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 flex flex-col gap-14" id="features">
+    <section
+      className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 flex flex-col gap-14"
+      id="features"
+    >
       {/* Section Heading */}
       <div className="flex flex-col justify-center items-center gap-5">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl  font-inter text-white font-bold">
           Features
         </h2>
         <p className="text-base md:text-lg font-inter text-center text-white/50 w-[90%] sm:w-full">
@@ -62,7 +65,7 @@ function Features() {
         {features.map((feature) => (
           <div
             key={feature.id}
-            className="relative flex flex-col gap-5 p-10 bg-slate-950 mx-auto rounded-3xl border border-purple-500 hover:border-white w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group hover:-translate-y-3"
+            className="relative flex flex-col gap-5 p-10 bg-slate-950 mx-auto rounded-3xl border border-purple-500 hover:border-white w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group hover:-translate-y-3 shadow-2xl"
           >
             {/* Icon Box */}
             <div className="p-3 w-fit bg-purple-500 border border-transparent group-hover:border-white rounded-xl group-hover:scale-110 transition duration-300 ease-in-out">

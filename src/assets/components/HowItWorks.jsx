@@ -28,10 +28,13 @@ const processes = [
 
 function HowItWorks() {
   return (
-    <section className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 flex flex-col gap-14" id="howitworks">
+    <section
+      className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 flex flex-col gap-14"
+      id="howitworks"
+    >
       {/* Section Heading */}
       <div className="flex flex-col justify-center items-center gap-5">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl  font-inter text-white font-bold">
           How It Works
         </h2>
         <p className="text-base md:text-lg font-inter text-center text-white/50 w-[90%] sm:w-full">
@@ -44,7 +47,7 @@ function HowItWorks() {
         {processes.map((process) => (
           <div
             key={process.id}
-            className="relative flex flex-col gap-5 p-10 bg-slate-950 mx-auto rounded-3xl border border-purple-500 hover:border-white w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group"
+            className="relative flex flex-col gap-5 p-10 bg-slate-950 mx-auto rounded-3xl border border-purple-500 hover:border-white w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group shadow-2xl"
           >
             {/* Numbering */}
             <div className="absolute right-6 top-5 text-7xl font-inter text-white/10 font-bold">
