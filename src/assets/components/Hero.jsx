@@ -1,4 +1,3 @@
-import React from "react";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import { MdPeopleAlt } from "react-icons/md";
@@ -10,7 +9,6 @@ const stats = [
     icon: <IoCheckmarkCircle size={40} className="text-green-500" />,
     stat: "98%",
     label: "Success Rate",
-    border: "lg:border-r border-purple-500 border-b lg:border-b-0",
   },
   {
     id: 2,
@@ -24,7 +22,6 @@ const stats = [
     icon: <MdAutoGraph size={40} className="text-yellow-500" />,
     stat: "3x",
     label: "More Interviews",
-    border: "lg:border-l border-purple-500 border-t lg:border-t-0",
   },
 ];
 
@@ -33,17 +30,17 @@ function Hero() {
     <>
       <section
         id="hero"
-        className="relative bg-linear-to-r from-[#03001C] to-[#1b1042] min-h-screen flex justify-center items-center"
+        className="relative bg-linear-to-r from-[#03001C] to-[#1b1042] min-h-screen flex justify-center items-center lg:pt-24"
       >
         {/* Orb Glow Container */}
-        <div className=" flex w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[375px] md:h-[375px] xl:w-[450px] xl:h-[450px] justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
+        <div className="lg:pt-24 flex w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[375px] md:h-[375px] xl:w-[450px] xl:h-[450px] justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
           <div className="w-[110%] h-[110%] shadow-lg shadow-pink-500 bg-transparent rounded-full absolute animate-spin-slow"></div>
           <div className="w-[108%] h-[108%] shadow-lg shadow-violet-500 bg-transparent rounded-full absolute rotate-90 animate-spin-medium"></div>
           <div className="w-[106%] h-[106%] shadow-lg shadow-cyan-500 bg-transparent rounded-full absolute rotate-180 animate-spin-fast"></div>
         </div>
 
         <div className="flex flex-col justify-center items-center gap-5 xl:gap-7 z-30">
-          <span className="bg-purple-950/75 border-[#47227b] border-2 py-2 rounded-full text-white text-xs md:text-sm  font-inter font-normal flex justify-center items-center px-5 md:px-0 md:w-[35%] lg:w-[27%] mx-auto gap-2">
+          <span className="bg-purple-950/75 border-[#47227b] border-2 py-2 rounded-full text-white text-xs md:text-sm  font-inter font-normal flex justify-center items-center px-5 md:px-0 md:w-[35%] lg:w-[27%] mx-auto gap-2 hover:scale-105 hover:bg-purple-900 hover:border-transparent transition duration-300 ease-in-out">
             <BsGraphUpArrow size={20} />
             50,000+ Resumes Optimized
           </span>
@@ -71,7 +68,7 @@ function Hero() {
       </section>
 
       <div className="bg-linear-to-r from-[#03001C] to-[#1b1042]">
-        <div className="bg-slate-950 border-purple-500 border grid grid-cols-1 lg:grid-cols-3 mx-auto w-[70%] rounded-lg shadow-2xl">
+        <div className=" grid grid-cols-1 lg:grid-cols-3 mx-auto w-[70%] rounded-lg">
           {stats.map((stat) => (
             <div
               key={stat.id}

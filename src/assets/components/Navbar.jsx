@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import React from "react";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,7 +38,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 flex justify-between flex-wrap items-center py-6 px-8 lg:px-10 bg-linear-to-r from-[#03001C] to-[#1b1042] z-50 border-b border-transparent transition duration-300 ease-in-out ${scrolled ? "border-b-purple-500/20" : ""} `}
+      className={`fixed w-full top-0 flex justify-between flex-wrap items-center py-6 px-8 lg:px-10 bg-linear-to-r from-[#03001C] to-[#1b1042] z-50 border-b border-transparent transition duration-300 ease-in-out ${scrolled ? "border-b-purple-500/20" : ""} `}
     >
       {/* Logo Container */}
       <a className="flex gap-2 items-center hover:cursor-pointer" href="#hero">
@@ -72,7 +71,7 @@ function Navbar() {
 
       {/* Menu Mobile Dropdown */}
       <div
-        className={`h-[calc(100vh-93px)] ${menuOpen ? "flex" : "hidden"} lg:hidden w-full flex-col items-start justify-center gap-7 transition duration-300 ease-in-out`}
+        className={`h-screen ${menuOpen ? "flex" : "hidden"} lg:hidden w-full flex-col items-start justify-center gap-7 transition duration-300 ease-in-out`}
       >
         <ul className="flex flex-col items-start justify-center gap-5 list-none">
           <li>

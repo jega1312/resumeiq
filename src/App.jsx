@@ -1,7 +1,7 @@
-import React from "react";
 import Navbar from "./assets/components/Navbar";
 import Hero from "./assets/components/Hero";
 import HowItWorks from "./assets/components/HowItWorks";
+import Features from "./assets/components/Features";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <Navbar />
       <Hero />
       <HowItWorks />
+      <Features />
     </div>
   );
 }
