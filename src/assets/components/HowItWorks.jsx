@@ -40,7 +40,7 @@ function HowItWorks() {
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 w-[80%] 2xl:w-[70%] mx-auto gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 w-[80%] 2xl:w-[70%] mx-auto gap-10 items-stretch">
         {processes.map((process) => (
           <div
             key={process.id}
