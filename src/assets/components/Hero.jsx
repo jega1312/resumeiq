@@ -40,7 +40,7 @@ function Hero() {
         </div>
 
         <div className="flex flex-col justify-center items-center gap-5 xl:gap-7 z-30">
-          <span className="bg-purple-950/75 border-[#47227b] border-2 py-2 rounded-full text-white text-xs md:text-sm  font-inter font-normal flex justify-center items-center px-5 md:px-0 md:w-[35%] lg:w-[27%] mx-auto gap-2 hover:scale-105 hover:bg-purple-900 hover:border-transparent transition duration-300 ease-in-out">
+          <span className="bg-purple-950/75 border-[#47227b] border-2 py-2 rounded-full text-white text-xs md:text-sm  font-inter font-normal flex justify-center items-center px-5 md:px-0 md:w-[35%] lg:w-[27%] mx-auto gap-2  hover:bg-purple-900 hover:border-transparent transition duration-300 ease-in-out">
             <BsGraphUpArrow size={20} />
             50,000+ Resumes Optimized
           </span>

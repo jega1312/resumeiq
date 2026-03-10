@@ -28,8 +28,7 @@
   font-family: "Inter";
   src: url("/fonts/Inter18pt-Regular.eot");
   src:
-    url("/fonts/Inter18pt-Regular.eot?#iefix")
-      format("embedded-opentype"),
+    url("/fonts/Inter18pt-Regular.eot?#iefix") format("embedded-opentype"),
     url("/fonts/Inter18pt-Regular.woff2") format("woff2"),
     url("/fonts/Inter18pt-Regular.woff") format("woff"),
     url("/fonts/Inter18pt-Regular.ttf") format("truetype"),
@@ -41,4 +40,32 @@
 
 .font-inter {
   font-family: "Inter", sans-serif;
+}
+
+/* Swiper.js Styles */
+
+/* Pagination Dots */
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.5;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+/* Active Dot */
+.swiper-pagination-bullet-active {
+  background: #a855f7 !important; /* purple */
+  opacity: 1;
+}
+
+.swiper-slide {
+  height: auto !important;
+}
+
+.swiper-wrapper {
+  align-items: stretch !important;
+}
+
+.swiper {
+  padding-bottom: 50px !important;
 }
