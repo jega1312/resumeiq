@@ -1,13 +1,11 @@
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { FaStar } from "react-icons/fa";
 import { LuQuote } from "react-icons/lu";
-import { FaChevronLeft } from "react-icons/fa6";
-import { FaChevronRight } from "react-icons/fa6";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 
 const testimonials = [
@@ -102,7 +100,7 @@ function Testimonials() {
       {/* Swiper */}
       <div>
         <Swiper
-        speed={800}
+          speed={800}
           modules={[Pagination, Navigation, Autoplay]}
           slidesPerView={1}
           spaceBetween={30}
