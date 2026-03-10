@@ -13,7 +13,7 @@ import { useState, useEffect } from "react";
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
+    name: "Michelle Chen",
     role: "Senior Software Engineer at Google",
     review:
       '"ResumeIQ helped me optimize my resume and I got 3 interview calls within a week!"',
@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Michael Chen",
+    name: "Luke Cage",
     role: "Product Manager at Microsoft",
     review:
       '"The ATS optimization feature is incredible. My resume now passes through screening systems with ease. Highly recommend!"',
@@ -29,7 +29,7 @@ const testimonials = [
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
+    name: "Vikram Patel",
     role: "Marketing Director at Amazon",
     review:
       '"I landed my dream job thanks to ResumeIQ. The personalized recommendations transformed my resume completely."',
@@ -37,7 +37,7 @@ const testimonials = [
   },
   {
     id: 4,
-    name: "David Park",
+    name: "Sarah Johnson",
     role: "Data Analyst at Meta",
     review:
       '"I was struggling to get callbacks until I used ResumeIQ. The keyword suggestions alone doubled my response rate!"',
@@ -45,7 +45,7 @@ const testimonials = [
   },
   {
     id: 5,
-    name: "Priya Patel",
+    name: "John Doe",
     role: "UX Designer at Apple",
     review:
       '"The detailed score breakdown showed me exactly what was holding my resume back. Got my dream job within a month!"',
