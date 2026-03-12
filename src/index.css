@@ -69,3 +69,98 @@
 .swiper {
   padding-bottom: 50px !important;
 }
+
+/* Phone Input Styles */
+.react-international-phone-input-container {
+  width: 100%;
+  height: 48px;
+}
+
+.react-international-phone-country-selector-button,
+.react-international-phone-input {
+  background: transparent !important;
+  border: 1px solid #334155 !important;
+  height: 48px !important;
+}
+
+.react-international-phone-country-selector-button {
+  border-right: none !important;
+  border-radius: 0.5rem 0 0 0.5rem !important;
+  padding: 0 8px !important;
+}
+
+.react-international-phone-input {
+  border-left: none !important;
+  border-radius: 0 0.5rem 0.5rem 0 !important;
+  width: 100% !important;
+  color: white !important;
+  font-family: 'Inter', sans-serif !important;
+  outline: none !important;
+  padding: 0 12px !important;
+  font-size: 14px !important;
+}
+
+/* Focus border */
+.react-international-phone-input-container:focus-within .react-international-phone-country-selector-button,
+.react-international-phone-input-container:focus-within .react-international-phone-input {
+  border-color: #a855f7 !important;
+}
+
+/* Error border */
+.phone-error .react-international-phone-country-selector-button,
+.phone-error .react-international-phone-input {
+  border-color: #ef4444 !important;
+}
+
+/* Keep error red even when focused */
+.phone-error
+.react-international-phone-input-container:focus-within
+.react-international-phone-country-selector-button,
+.phone-error
+.react-international-phone-input-container:focus-within
+.react-international-phone-input {
+  border-color: #ef4444 !important;
+}
+/* Dropdown */
+.react-international-phone-country-selector-dropdown {
+  background: #020618 !important;
+  color: white !important;
+}
+
+.react-international-phone-country-selector-dropdown__list-item:hover {
+  background: #1e293b !important;
+  color: white !important;
+}
+
+.react-international-phone-country-selector-dropdown__list-item-country-name {
+  color: white !important;
+}
+
+.react-international-phone-country-selector-dropdown__list-item--selected {
+  background: #a855f7 !important;
+  color: white !important;
+}
+
+.react-international-phone-country-selector-dropdown__list-item--selected .react-international-phone-country-selector-dropdown__list-item-dial-code {
+  color: white !important;
+}
+
+/* Checkbox Animations */
+@keyframes morph-in {
+  0% { transform: scale(0.8); border-radius: 50%; opacity: 0.5; }
+  60% { transform: scale(1.15); border-radius: 30%; }
+  100% { transform: scale(1); border-radius: 4px; opacity: 1; }
+}
+
+@keyframes morph-out {
+  0% { transform: scale(1); border-radius: 4px; opacity: 1; }
+  100% { transform: scale(0.8); border-radius: 50%; opacity: 0.5; }
+}
+
+.checkbox-checked {
+  animation: morph-in 0.25s ease-out;
+}
+
+.checkbox-unchecked {
+  animation: morph-out 0.25s ease-out;
+}

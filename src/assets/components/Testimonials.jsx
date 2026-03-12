@@ -43,7 +43,7 @@ const testimonials = [
   },
   {
     id: 5,
-    name: "John Doe",
+    name: "",
     role: "UX Designer at Apple",
     review:
       '"The detailed score breakdown showed me exactly what was holding my resume back. Got my dream job within a month!"',
@@ -58,13 +58,13 @@ function NavButtons() {
     <div className="relative flex justify-center items-center gap-4 pt-10">
       <button
         onClick={() => swiper.slidePrev()}
-        className="bg-[#020618] border size-12 flex justify-center items-center border-purple-500 text-purple-500 rounded-full transition duration-300 ease-in-out hover:bg-purple-500 hover:border-white hover:text-white hover:cursor-pointer shadow-2xl"
+        className="bg-[#020618] border size-12 flex justify-center items-center border-purple-500 text-purple-500 rounded-full transition duration-300 ease-in-out hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 hover:border-white hover:text-white hover:cursor-pointer shadow-2xl"
       >
         <FaChevronLeft size={20} />
       </button>
       <button
         onClick={() => swiper.slideNext()}
-        className="bg-[#020618] border size-12 flex justify-center items-center border-purple-500 text-purple-500 rounded-full transition duration-300 ease-in-out hover:bg-purple-500 hover:border-white hover:text-white hover:cursor-pointer shadow-2xl"
+        className="bg-[#020618] border size-12 flex justify-center items-center border-purple-500 text-purple-500 rounded-full transition duration-300 ease-in-out hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 hover:border-white hover:text-white hover:cursor-pointer shadow-2xl"
       >
         <FaChevronRight size={20} />
       </button>
@@ -89,10 +89,10 @@ function Testimonials() {
       className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 flex flex-col gap-14"
     >
       <div className="flex flex-col justify-center items-center gap-5">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold text-balance">
           Testimonials
         </h2>
-        <p className="text-base md:text-lg font-inter text-center text-white/50 w-[90%] sm:w-full">
+        <p className="text-base md:text-lg font-inter text-center text-white/50 text-balance">
           Thousands of careers transformed and counting
         </p>
       </div>

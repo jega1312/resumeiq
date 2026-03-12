@@ -42,17 +42,17 @@ const plans = [
   },
 ];
 
-function Pricing() {
+function Pricing({setSelectedPlan}) {
   return (
     <section
       id="pricing"
       className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 flex flex-col gap-14"
     >
       <div className="flex flex-col justify-center items-center gap-5">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl  font-inter text-white font-bold">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl  font-inter text-white font-bold text-balance">
           Pricing
         </h2>
-        <p className="text-base md:text-lg font-inter text-center text-white/50 w-[90%] sm:w-full">
+        <p className="text-base md:text-lg font-inter text-center text-white/50 text-balance">
           Choose the plan that fits your goals
         </p>
       </div>
@@ -103,6 +103,12 @@ function Pricing() {
               {/* Select */}
               <button
                 type="button"
+                onClick={() => {
+                  setSelectedPlan(plan.name);
+                  document
+                    .getElementById("register")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
                 className="py-2 rounded-full bg-transparent border border-purple-500 text-purple-500 font-inter w-[50%] transition duration-300 ease-in-out hover:cursor-pointer hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 hover:text-white hover:border-purple-500"
               >
                 Select

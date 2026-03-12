@@ -52,10 +52,10 @@ function Features() {
     >
       {/* Section Heading */}
       <div className="flex flex-col justify-center items-center gap-5">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl  font-inter text-white font-bold">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl  font-inter text-white font-bold text-balance">
           Features
         </h2>
-        <p className="text-base md:text-lg font-inter text-center text-white/50 w-[90%] sm:w-full">
+        <p className="text-base md:text-lg font-inter text-center text-white/50 text-balance">
           Everything you need to create a winning resume
         </p>
       </div>
