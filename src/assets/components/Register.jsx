@@ -55,7 +55,7 @@ function Register({ selectedPlan }) {
   return (
     <section
       id="register"
-      className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 flex flex-col gap-14"
+      className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 pb-0 lg:pb-16 flex flex-col gap-14"
     >
       {/* Heading */}
       <div className="flex flex-col justify-center items-center gap-5">

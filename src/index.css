@@ -10,6 +10,10 @@
   html {
     scroll-behavior: smooth;
   }
+
+  body{
+    background: linear-gradient(to right, #03001C, #1b1042);
+  }
 }
 
 .animate-spin-slow {

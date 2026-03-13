@@ -64,16 +64,16 @@ function FAQ() {
           <div
             key={faq.id}
             onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
-            className={`border rounded-xl p-7 bg-slate-950 flex flex-col cursor-pointer transition duration-300 ease-in-out
+            className={`border rounded-xl p-7 bg-slate-950 flex flex-col cursor-pointer transition group duration-300 ease-in-out hover:border-purple-500
   ${openId === faq.id ? "border-purple-500" : "border-slate-700"}`}
           >
             <div className="flex items-center justify-between w-full">
-              <h3 className="text-lg text-white font-inter font-semibold">
+              <h3 className="text-lg text-white font-inter font-bold">
                 {faq.question}
               </h3>
               <FaChevronDown
                 size={20}
-                className={`shrink-0 transition duration-300 ease-in-out
+                className={`shrink-0 transition duration-300 ease-in-out group-hover:text-purple-500
       ${openId === faq.id ? "rotate-180 text-purple-500" : "text-white/50"}`}
               />
             </div>

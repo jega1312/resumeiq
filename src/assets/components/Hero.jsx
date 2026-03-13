@@ -58,12 +58,13 @@ function Hero() {
           </p>
 
           {/* Get Started Desktop Button */}
-          <button
+          <a
             type="button"
-            className="py-2 px-5 sm:px-0 text-sm sm:text-base sm:w-[20%] lg:w-[15%] bg-purple-500 font-inter font-medium text-white/90 hover:text-white rounded-sm hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer"
+            href="#register"
+            className="py-2 px-5 text-center sm:px-0 text-sm sm:text-base sm:w-[20%] lg:w-[15%] bg-purple-500 font-inter font-medium text-white/90 hover:text-white rounded-sm hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer"
           >
             Get Started
-          </button>
+          </a>
         </div>
       </section>
 

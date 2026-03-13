@@ -42,11 +42,11 @@ const plans = [
   },
 ];
 
-function Pricing({setSelectedPlan}) {
+function Pricing({ setSelectedPlan }) {
   return (
     <section
       id="pricing"
-      className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 flex flex-col gap-14"
+      className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 pb-0 lg:pb-16 flex flex-col gap-14"
     >
       <div className="flex flex-col justify-center items-center gap-5">
         <h2 className="text-3xl md:text-4xl lg:text-5xl  font-inter text-white font-bold text-balance">

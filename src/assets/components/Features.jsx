@@ -47,7 +47,7 @@ const features = [
 function Features() {
   return (
     <section
-      className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 flex flex-col gap-14"
+      className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 pb-12 flex flex-col gap-14"
       id="features"
     >
       {/* Section Heading */}

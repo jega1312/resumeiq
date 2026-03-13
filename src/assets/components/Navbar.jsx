@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   const toggleOpen = () => {
     setMenuOpen(!menuOpen);
@@ -36,18 +37,36 @@ function Navbar() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (menuOpen) return;
+
+      const sections = document.querySelectorAll("section[id]");
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          setActiveSection(section.id);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // run once on mount
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [menuOpen]);
+
   return (
     <nav
-      className={`fixed w-full top-0 flex justify-between flex-wrap items-center py-6 px-8 lg:px-10  z-50 border-b border-transparent transition duration-300 ease-in-out ${scrolled ? "border-b-slate-700/20 bg-[#03001C]/20 backdrop-blur-md" : "bg-linear-to-r from-[#03001C] to-[#1b1042]"} `}
+      className={`fixed w-full top-0 flex justify-between flex-wrap items-center py-6 px-8 lg:px-10  z-50 border-b border-transparent transition duration-300 ease-in-out ${scrolled ? "border-b-slate-700/20 bg-[#03001C]/50 backdrop-blur-md" : "bg-linear-to-r from-[#03001C] to-[#1b1042]"} `}
     >
       {/* Logo Container */}
       <a className="flex gap-2 items-center hover:cursor-pointer" href="#hero">
-        {/* <img
-          src="/images/logo.png"
-          alt="Logo Image"
-          className="size-10 md:size-11"
-        /> */}
-        <span className="text-base md:text-xl font-bold font-inter text-white w-full">
+        <span className="text-2xl font-bold font-inter text-white w-full">
           Resume
           <span className="bg-linear-to-r from-purple-500 to-blue-600 bg-clip-text text-transparent">
             IQ
@@ -80,57 +99,79 @@ function Navbar() {
           <li>
             <a
               href="#howitworks"
-              className="no-underline font-inter font-medium text-4xl relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
+              onClick={() => setMenuOpen(false)}
+              className={`no-underline font-inter font-medium text-4xl relative group  transition duration-300 ease-in-out ${activeSection === "howitworks" ? "text-white" : "text-white/75 hover:text-white"}`}
             >
               How It Works
-              <span className="h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out"></span>
+              <span
+                className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "howitworks" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
+              ></span>
             </a>
           </li>
           <li>
             <a
               href="#features"
-              className="no-underline font-inter font-medium text-4xl relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
+              onClick={() => setMenuOpen(false)}
+              className={`no-underline font-inter font-medium text-4xl relative group  transition duration-300 ease-in-out ${activeSection === "features" ? "text-white" : "text-white/75 hover:text-white"}`}
             >
               Features
-              <span className="h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out"></span>
+              <span
+                className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "features" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
+              ></span>
             </a>
           </li>
           <li>
             <a
               href="#pricing"
-              className="no-underline font-inter font-medium text-4xl relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
+              onClick={() => setMenuOpen(false)}
+              className={`no-underline font-inter font-medium text-4xl relative group  transition duration-300 ease-in-out ${activeSection === "pricing" ? "text-white" : "text-white/75 hover:text-white"}`}
             >
               Pricing
-              <span className="h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out"></span>
+              <span
+                className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "pricing" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
+              ></span>
             </a>
           </li>
           <li>
             <a
               href="#testimonials"
-              className="no-underline font-inter font-medium text-4xl relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
+              onClick={() => setMenuOpen(false)}
+              className={`no-underline font-inter font-medium text-4xl relative group  transition duration-300 ease-in-out ${activeSection === "testimonials" ? "text-white" : "text-white/75 hover:text-white"}`}
             >
               Testimonials
-              <span className="h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out"></span>
+              <span
+                className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "testimonials" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
+              ></span>
             </a>
           </li>
           <li>
             <a
               href="#faq"
-              className="no-underline font-inter font-medium text-4xl relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
+              onClick={() => setMenuOpen(false)}
+              className={`no-underline font-inter font-medium text-4xl relative group  transition duration-300 ease-in-out ${activeSection === "faq" ? "text-white" : "text-white/75 hover:text-white"}`}
             >
               FAQ
-              <span className="h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out"></span>
+              <span
+                className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "faq" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
+              ></span>
             </a>
           </li>
         </ul>
 
         {/* Register Now Mobile Button */}
-        <button
+        <a
           type="button"
-          className="py-3 px-5 bg-purple-500 font-inter font-medium text-white/90 hover:text-white text-xl rounded-sm hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer"
+          href="#register"
+          onClick={() => setMenuOpen(false)}
+          className={`py-3 px-5 font-inter font-medium text-white text-xl rounded-sm transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer
+  ${
+    activeSection === "register"
+      ? "bg-linear-to-r from-purple-500 to-blue-600"
+      : "bg-purple-500 text-white/90 hover:text-white hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600"
+  }`}
         >
           Register Now
-        </button>
+        </a>
       </div>
 
       {/* Desktop Links */}
@@ -138,57 +179,72 @@ function Navbar() {
         <li>
           <a
             href="#howitworks"
-            className="no-underline font-inter font-medium text-lg relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
+            className={`no-underline font-inter font-medium text-lg relative group  transition duration-300 ease-in-out ${activeSection === "howitworks" ? "text-white" : "text-white/75 hover:text-white"}`}
           >
             How It Works
-            <span className="h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out"></span>
+            <span
+              className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "howitworks" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
+            ></span>
           </a>
         </li>
         <li>
           <a
             href="#features"
-            className="no-underline font-inter font-medium text-lg relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
+            className={`no-underline font-inter font-medium text-lg relative group  transition duration-300 ease-in-out ${activeSection === "features" ? "text-white" : "text-white/75 hover:text-white"}`}
           >
             Features
-            <span className="h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out"></span>
+            <span
+              className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "features" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
+            ></span>
           </a>
         </li>
         <li>
           <a
             href="#pricing"
-            className="no-underline font-inter font-medium text-lg relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
+            className={`no-underline font-inter font-medium text-lg relative group  transition duration-300 ease-in-out ${activeSection === "pricing" ? "text-white" : "text-white/75 hover:text-white"}`}
           >
             Pricing
-            <span className="h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out"></span>
+            <span
+              className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "pricing" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
+            ></span>
           </a>
         </li>
         <li>
           <a
             href="#testimonials"
-            className="no-underline font-inter font-medium text-lg relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
+            className={`no-underline font-inter font-medium text-lg relative group  transition duration-300 ease-in-out ${activeSection === "testimonials" ? "text-white" : "text-white/75 hover:text-white"}`}
           >
             Testimonials
-            <span className="h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out"></span>
+            <span
+              className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "testimonials" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
+            ></span>
           </a>
         </li>
         <li>
           <a
             href="#faq"
-            className="no-underline font-inter font-medium text-lg relative group text-white/75 hover:text-white transition duration-300 ease-in-out"
+            className={`no-underline font-inter font-medium text-lg relative group  transition duration-300 ease-in-out ${activeSection === "faq" ? "text-white" : "text-white/75 hover:text-white"}`}
           >
             FAQ
-            <span className="h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out"></span>
+            <span
+              className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "faq" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
+            ></span>
           </a>
         </li>
       </ul>
 
       {/* Register Now Desktop Button */}
-      <button
+      <a
         type="button"
-        className="hidden lg:block py-2 px-4 bg-purple-500 font-inter font-medium text-white/90 hover:text-white rounded-sm hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer"
+        href="#register"
+        className={`hidden lg:block py-2 px-4 font-inter font-medium rounded-sm transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer ${
+          activeSection === "register"
+            ? "bg-linear-to-r from-purple-500 to-blue-600 text-white"
+            : "bg-purple-500 text-white/90 hover:text-white hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600"
+        }`}
       >
         Register Now
-      </button>
+      </a>
     </nav>
   );
 }
