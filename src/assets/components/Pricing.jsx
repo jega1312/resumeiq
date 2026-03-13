@@ -62,7 +62,7 @@ function Pricing({setSelectedPlan}) {
         {plans.map((plan) => (
           <div
             key={plan.id}
-            className="relative flex flex-col justify-between items-center gap-10 p-10 bg-slate-950 mx-auto rounded-3xl border border-purple-500 hover:border-white w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group shadow-2xl hover:scale-105"
+            className="relative flex flex-col justify-between items-center gap-10 p-10 bg-slate-950 mx-auto rounded-3xl border border-slate-700 hover:border-purple-500 w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group shadow-2xl hover:scale-105"
           >
             <div className="flex flex-col items-center gap-10">
               <div className="flex flex-col items-center justify-center gap-5">
@@ -109,7 +109,7 @@ function Pricing({setSelectedPlan}) {
                     .getElementById("register")
                     .scrollIntoView({ behavior: "smooth" });
                 }}
-                className="py-2 rounded-full bg-transparent border border-purple-500 text-purple-500 font-inter w-[50%] transition duration-300 ease-in-out hover:cursor-pointer hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 hover:text-white hover:border-purple-500"
+                className="py-2 rounded-full bg-transparent border border-purple-500 text-purple-500 font-inter w-[50%] transition duration-300 ease-in-out hover:cursor-pointer hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 hover:text-white hover:border-purple-700"
               >
                 Select
               </button>

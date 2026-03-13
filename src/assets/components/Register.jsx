@@ -206,8 +206,7 @@ function Register({ selectedPlan }) {
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => {
                   setIsFocused(false);
-
-                  if (!phone || phone.length < 8) {
+                  if (hasInput && phone.length < 8) {
                     setPhoneError("Enter a valid phone number");
                   }
                 }}
@@ -217,7 +216,7 @@ function Register({ selectedPlan }) {
                 className={`font-inter absolute z-10 transition-all duration-300 pointer-events-none
                 ${
                   isFocused || hasInput || phoneError
-                    ? "-top-2 left-3 text-xs text-purple-500 px-1"
+                    ? "-top-2 left-3 text-xs px-1"
                     : "left-14 top-1/2 -translate-y-1/2 text-white/50 text-xs sm:text-sm"
                 }  ${phoneError ? "text-red-500" : isFocused || hasInput ? "text-purple-500" : "text-white/50"}`}
               >

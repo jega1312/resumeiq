@@ -38,7 +38,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full top-0 flex justify-between flex-wrap items-center py-6 px-8 lg:px-10  z-50 border-b border-transparent transition duration-300 ease-in-out ${scrolled ? "border-b-purple-500/10 bg-[#03001C]/20 backdrop-blur-md" : "bg-linear-to-r from-[#03001C] to-[#1b1042]"} `}
+      className={`fixed w-full top-0 flex justify-between flex-wrap items-center py-6 px-8 lg:px-10  z-50 border-b border-transparent transition duration-300 ease-in-out ${scrolled ? "border-b-slate-700/20 bg-[#03001C]/20 backdrop-blur-md" : "bg-linear-to-r from-[#03001C] to-[#1b1042]"} `}
     >
       {/* Logo Container */}
       <a className="flex gap-2 items-center hover:cursor-pointer" href="#hero">

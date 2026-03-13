@@ -6,6 +6,7 @@ import Features from "./assets/components/Features";
 import Pricing from "./assets/components/Pricing";
 import Testimonials from "./assets/components/Testimonials";
 import Register from "./assets/components/Register";
+import FAQ from "./assets/components/FAQ";
 
 function App() {
   const [selectedPlan, setSelectedPlan] = useState("");
@@ -18,6 +19,7 @@ function App() {
       <Pricing setSelectedPlan={setSelectedPlan} />
       <Testimonials />
       <Register selectedPlan={selectedPlan} />
+      <FAQ />
     </div>
   );
 }

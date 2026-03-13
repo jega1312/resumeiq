@@ -65,10 +65,10 @@ function Features() {
         {features.map((feature) => (
           <div
             key={feature.id}
-            className="relative flex flex-col gap-5 p-10 bg-slate-950 mx-auto rounded-3xl border border-purple-500 hover:border-white w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group hover:-translate-y-3 shadow-2xl"
+            className="relative flex flex-col gap-5 p-10 bg-slate-950 mx-auto rounded-3xl border border-slate-700 hover:border-purple-500 w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group hover:-translate-y-3 shadow-2xl"
           >
             {/* Icon Box */}
-            <div className="p-3 w-fit bg-purple-500 border border-transparent group-hover:border-white rounded-xl group-hover:scale-110 transition duration-300 ease-in-out">
+            <div className="p-3 w-fit bg-purple-500 border border-transparent group-hover:border-purple-700 group-hover:bg-linear-to-r group-hover:from-purple-500 group-hover:to-blue-600 rounded-xl group-hover:scale-110 transition duration-300 ease-in-out">
               {feature.icon}
             </div>
             {/* Content */}

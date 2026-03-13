@@ -47,14 +47,14 @@ function HowItWorks() {
         {processes.map((process) => (
           <div
             key={process.id}
-            className="relative flex flex-col gap-5 p-10 bg-slate-950 mx-auto rounded-3xl border border-purple-500 hover:border-white w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group shadow-2xl"
+            className="relative flex flex-col gap-5 p-10 bg-slate-950 mx-auto rounded-3xl border border-slate-700 hover:border-purple-500 w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group shadow-2xl"
           >
             {/* Numbering */}
-            <div className="absolute right-6 top-5 text-7xl font-inter text-white/10 font-bold">
+            <div className="absolute right-6 top-5 text-7xl font-inter text-white/10 font-bold group-hover:bg-linear-to-r group-hover:from-purple-500 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent group-hover:transition group-hover:duration-300 group-hover:ease-in-out">
               {process.numbering}
             </div>
             {/* Icon Box */}
-            <div className="p-3 w-fit bg-purple-500 border border-transparent group-hover:border-white rounded-full group-hover:scale-110 transition duration-300 ease-in-out">
+            <div className="p-3 w-fit bg-purple-500 border border-transparent group-hover:border-purple-700 rounded-full group-hover:scale-110 transition duration-300 ease-in-out group-hover:bg-linear-to-r group-hover:from-purple-500 group-hover:to-blue-600">
               {process.icon}
             </div>
             {/* Content */}
