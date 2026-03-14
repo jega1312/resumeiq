@@ -84,7 +84,7 @@ function FAQ() {
           initial={{ opacity: 0, y: 40 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold text-center text-balance w-[90%] md:w-full mx-auto "
+          className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold text-center text-balance w-[85%] md:w-full mx-auto "
         >
           Frequently Asked Questions
         </motion.h2>
@@ -92,7 +92,7 @@ function FAQ() {
           initial={{ opacity: 0, y: 40 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-          className="text-base md:text-lg font-inter text-center text-white/50 text-balance w-[90%] md:w-full mx-auto"
+          className="text-base md:text-lg font-inter text-center text-white/50 text-balance w-[85%] md:w-full mx-auto"
         >
           Everything you need to know about ResumeIQ
         </motion.p>
