@@ -2,6 +2,9 @@ import { BsGraphUpArrow } from "react-icons/bs";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import { MdPeopleAlt } from "react-icons/md";
 import { MdAutoGraph } from "react-icons/md";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
+motion;
 
 const stats = [
   {
@@ -25,7 +28,25 @@ const stats = [
   },
 ];
 
+// Mapped Elements Animation
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
 function Hero() {
+  // Start Animation When Visible
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   return (
     <>
       <section
@@ -40,39 +61,64 @@ function Hero() {
         </div>
 
         <div className="flex flex-col justify-center items-center gap-5 xl:gap-7 z-30">
-          <span className="bg-purple-950/75 border-[#47227b] border-2 py-2 rounded-full text-white text-xs md:text-sm  font-inter font-normal flex justify-center items-center px-5 md:px-0 md:w-[35%] lg:w-[27%] mx-auto gap-2  hover:bg-purple-900 hover:border-transparent transition duration-300 ease-in-out">
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="bg-purple-950/75 border-[#47227b] border-2 py-2 rounded-full text-white text-xs md:text-sm  font-inter font-normal flex justify-center items-center px-5 md:px-0 md:w-[35%] lg:w-[27%] mx-auto gap-2  hover:bg-purple-900 hover:border-transparent transition duration-300 ease-in-out"
+          >
             <BsGraphUpArrow size={20} />
             50,000+ Resumes Optimized
-          </span>
+          </motion.span>
 
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center text-white font-inter font-bold md:leading-20">
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center text-white font-inter font-bold md:leading-20"
+          >
             Transform Your Resume With <br />
             <span className="bg-linear-to-r from-purple-500 to-blue-600 bg-clip-text text-transparent text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
               AI Intelligence
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-sm sm:text-lg lg:text-xl text-center text-white/70 font-inter mx-auto w-[70%] md:w-[60%] lg:w-[50%]">
+          <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            className="text-sm sm:text-lg lg:text-xl text-center text-white/70 font-inter mx-auto w-[70%] md:w-[60%] lg:w-[50%]"
+          >
             Get personalized insights, ATS optimization & expert recommendations
             to land your dream job faster.
-          </p>
+          </motion.p>
 
           {/* Get Started Desktop Button */}
-          <a
+          <motion.a
             type="button"
             href="#register"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
             className="py-2 px-5 text-center sm:px-0 text-sm sm:text-base sm:w-[20%] lg:w-[15%] bg-purple-500 font-inter font-medium text-white/90 hover:text-white rounded-sm hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer"
           >
             Get Started
-          </a>
+          </motion.a>
         </div>
       </section>
 
       <div className="bg-linear-to-r from-[#03001C] to-[#1b1042]">
-        <div className=" grid grid-cols-1 lg:grid-cols-3 mx-auto w-[70%] rounded-lg">
+        <motion.div
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className=" grid grid-cols-1 lg:grid-cols-3 mx-auto w-[70%] rounded-lg"
+        >
           {stats.map((stat) => (
-            <div
+            <motion.div
               key={stat.id}
+              variants={itemVariants}
               className={`py-5 flex flex-col justify-center items-center ${stat.border}`}
             >
               {stat.icon}
@@ -82,9 +128,9 @@ function Hero() {
               <p className="text-base font-inter font-normal text-white">
                 {stat.label}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </>
   );

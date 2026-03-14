@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
+motion;
 
 const benefits = [
   "Instant AI Resume Score",
@@ -12,6 +15,35 @@ const benefits = [
   "Job Match Recommendations",
   "Cancel or Upgrade Anytime",
 ];
+
+// Mapped Elements Animation
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: 40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const formVariants = {
+  hidden: { opacity: 0, x: -40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
 
 function Register({ selectedPlan }) {
   const plans = ["Basic", "Plus", "Premium"];
@@ -49,8 +81,12 @@ function Register({ selectedPlan }) {
   const [phone, setPhone] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [hasInput, setHasInput] = useState(false);
-
   const [phoneError, setPhoneError] = useState("");
+
+  // Start Animation When Visible
+  const headingRef = useRef(null);
+
+  const headingInView = useInView(headingRef, { once: true, amount: 0.3 });
 
   return (
     <section
@@ -59,20 +95,34 @@ function Register({ selectedPlan }) {
     >
       {/* Heading */}
       <div className="flex flex-col justify-center items-center gap-5">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold text-center text-balance">
+        <motion.h2
+          ref={headingRef}
+          initial={{ opacity: 0, y: 40 }}
+          animate={headingInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+          className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold text-center text-balance"
+        >
           Optimize Your Resume Today
-        </h2>
-        <p className="text-base md:text-lg font-inter text-center text-white/50 text-balance">
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          animate={headingInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          className="text-base md:text-lg font-inter text-center text-white/50 text-balance"
+        >
           Take the first step toward your dream career
-        </p>
+        </motion.p>
       </div>
 
       {/* Main Container */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:justify-center place-items-center w-full md:w-[90%] max-w-6xl mx-auto gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:justify-center place-items-center w-full md:w-[90%] max-w-6xl mx-auto gap-10 overflow-hidden">
         {/* Form Container */}
         <div className="w-full p-10 flex justify-center items-center">
           {/* Registration Form */}
-          <form
+          <motion.form
+            variants={formVariants}
+            initial="hidden"
+            animate={headingInView ? "visible" : "hidden"}
             onSubmit={handleSubmit(
               (data) => {
                 if (!phone || phone.length < 8) {
@@ -333,27 +383,38 @@ function Register({ selectedPlan }) {
             >
               Get Early Access
             </button>
-          </form>
+          </motion.form>
         </div>
 
         {/* What You'll Get Container */}
         <div className="flex flex-col items-start gap-10">
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold text-center text-balance">
+          <motion.h3
+            initial={{ opacity: 0, x: 40 }}
+            animate={headingInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            className="text-3xl md:text-4xl font-inter text-white font-bold text-center text-balance"
+          >
             What You'll Get
-          </h3>
+          </motion.h3>
 
           {/* Benefits */}
-          <ul className="flex flex-col gap-5 items-start">
+          <motion.ul
+            variants={containerVariants}
+            initial="hidden"
+            animate={headingInView ? "visible" : "hidden"}
+            className="flex flex-col gap-5 items-start"
+          >
             {benefits.map((benefit, index) => (
-              <li
+              <motion.li
                 key={index}
+                variants={itemVariants}
                 className="text-white font-inter text-base md:text-lg flex items-center gap-3"
               >
                 <IoCheckmarkCircle size={20} className="text-purple-500" />
                 {benefit}
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         </div>
       </div>
     </section>

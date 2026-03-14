@@ -1,11 +1,16 @@
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
+motion;
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  // Animation Toggling
+  const [hasOpened, setHasOpened] = useState(false);
 
   const toggleOpen = () => {
+    if (!hasOpened) setHasOpened(true);
     setMenuOpen(!menuOpen);
   };
 
@@ -65,14 +70,20 @@ function Navbar() {
       className={`fixed w-full top-0 flex justify-between flex-wrap items-center py-6 px-8 lg:px-10  z-50 border-b border-transparent transition duration-300 ease-in-out ${scrolled ? "border-b-slate-700/20 bg-[#03001C]/50 backdrop-blur-md" : "bg-linear-to-r from-[#03001C] to-[#1b1042]"} `}
     >
       {/* Logo Container */}
-      <a className="flex gap-2 items-center hover:cursor-pointer" href="#hero">
+      <motion.a
+        className="flex gap-2 items-center hover:cursor-pointer"
+        href="#hero"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
         <span className="text-2xl font-bold font-inter text-white w-full">
           Resume
           <span className="bg-linear-to-r from-purple-500 to-blue-600 bg-clip-text text-transparent">
             IQ
           </span>
         </span>
-      </a>
+      </motion.a>
 
       {/* Hamburger Menu */}
       <button
@@ -95,148 +106,184 @@ function Navbar() {
       <div
         className={`h-screen ${menuOpen ? "flex" : "hidden"} lg:hidden w-full flex-col items-start justify-center gap-7 transition duration-300 ease-in-out`}
       >
-        <ul className="flex flex-col items-start justify-center gap-5 list-none">
+        <ul className="flex flex-col items-start justify-center gap-5 list-none w-full">
           <li>
-            <a
+            <motion.a
               href="#howitworks"
+              initial={{ opacity: 0 }}
+              animate={hasOpened ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
               onClick={() => setMenuOpen(false)}
-              className={`no-underline font-inter font-medium text-4xl relative group  transition duration-300 ease-in-out ${activeSection === "howitworks" ? "text-white" : "text-white/75 hover:text-white"}`}
+              className={`no-underline font-inter font-medium text-3xl relative group transition duration-300 ease-in-out ${activeSection === "howitworks" ? "text-white" : "text-white/75 hover:text-white"}`}
             >
               How It Works
               <span
                 className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "howitworks" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
               ></span>
-            </a>
+            </motion.a>
           </li>
           <li>
-            <a
+            <motion.a
               href="#features"
+              initial={{ opacity: 0 }}
+              animate={hasOpened ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
               onClick={() => setMenuOpen(false)}
-              className={`no-underline font-inter font-medium text-4xl relative group  transition duration-300 ease-in-out ${activeSection === "features" ? "text-white" : "text-white/75 hover:text-white"}`}
+              className={`no-underline font-inter font-medium text-3xl relative group  transition duration-300 ease-in-out ${activeSection === "features" ? "text-white" : "text-white/75 hover:text-white"}`}
             >
               Features
               <span
                 className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "features" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
               ></span>
-            </a>
+            </motion.a>
           </li>
           <li>
-            <a
+            <motion.a
               href="#pricing"
+              initial={{ opacity: 0 }}
+              animate={hasOpened ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
               onClick={() => setMenuOpen(false)}
-              className={`no-underline font-inter font-medium text-4xl relative group  transition duration-300 ease-in-out ${activeSection === "pricing" ? "text-white" : "text-white/75 hover:text-white"}`}
+              className={`no-underline font-inter font-medium text-3xl relative group  transition duration-300 ease-in-out ${activeSection === "pricing" ? "text-white" : "text-white/75 hover:text-white"}`}
             >
               Pricing
               <span
                 className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "pricing" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
               ></span>
-            </a>
+            </motion.a>
           </li>
           <li>
-            <a
+            <motion.a
               href="#testimonials"
+              initial={{ opacity: 0 }}
+              animate={hasOpened ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
               onClick={() => setMenuOpen(false)}
-              className={`no-underline font-inter font-medium text-4xl relative group  transition duration-300 ease-in-out ${activeSection === "testimonials" ? "text-white" : "text-white/75 hover:text-white"}`}
+              className={`no-underline font-inter font-medium text-3xl relative group  transition duration-300 ease-in-out ${activeSection === "testimonials" ? "text-white" : "text-white/75 hover:text-white"}`}
             >
               Testimonials
               <span
                 className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "testimonials" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
               ></span>
-            </a>
+            </motion.a>
           </li>
           <li>
-            <a
+            <motion.a
               href="#faq"
+              initial={{ opacity: 0 }}
+              animate={hasOpened ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
               onClick={() => setMenuOpen(false)}
-              className={`no-underline font-inter font-medium text-4xl relative group  transition duration-300 ease-in-out ${activeSection === "faq" ? "text-white" : "text-white/75 hover:text-white"}`}
+              className={`no-underline font-inter font-medium text-3xl relative group  transition duration-300 ease-in-out ${activeSection === "faq" ? "text-white" : "text-white/75 hover:text-white"}`}
             >
               FAQ
               <span
                 className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "faq" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
               ></span>
-            </a>
+            </motion.a>
           </li>
         </ul>
 
         {/* Register Now Mobile Button */}
-        <a
+        <motion.a
           type="button"
           href="#register"
+          initial={{ opacity: 0 }}
+          animate={hasOpened ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
           onClick={() => setMenuOpen(false)}
-          className={`py-3 px-5 font-inter font-medium text-white text-xl rounded-sm transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer
-  ${
-    activeSection === "register"
-      ? "bg-linear-to-r from-purple-500 to-blue-600"
-      : "bg-purple-500 text-white/90 hover:text-white hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600"
-  }`}
+          className={`py-2.5 px-4 font-inter font-medium text-white text-lg rounded-sm transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer
+          ${
+            activeSection === "register"
+              ? "bg-linear-to-r from-purple-500 to-blue-600"
+              : "bg-purple-500 text-white/90 hover:text-white hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600"
+          }`}
         >
           Register Now
-        </a>
+        </motion.a>
       </div>
 
       {/* Desktop Links */}
       <ul className="hidden lg:flex items-center gap-4 list-none">
         <li>
-          <a
+          <motion.a
             href="#howitworks"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
             className={`no-underline font-inter font-medium text-lg relative group  transition duration-300 ease-in-out ${activeSection === "howitworks" ? "text-white" : "text-white/75 hover:text-white"}`}
           >
             How It Works
             <span
               className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "howitworks" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
             ></span>
-          </a>
+          </motion.a>
         </li>
         <li>
-          <a
+          <motion.a
             href="#features"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
             className={`no-underline font-inter font-medium text-lg relative group  transition duration-300 ease-in-out ${activeSection === "features" ? "text-white" : "text-white/75 hover:text-white"}`}
           >
             Features
             <span
               className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "features" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
             ></span>
-          </a>
+          </motion.a>
         </li>
         <li>
-          <a
+          <motion.a
             href="#pricing"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
             className={`no-underline font-inter font-medium text-lg relative group  transition duration-300 ease-in-out ${activeSection === "pricing" ? "text-white" : "text-white/75 hover:text-white"}`}
           >
             Pricing
             <span
               className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "pricing" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
             ></span>
-          </a>
+          </motion.a>
         </li>
         <li>
-          <a
+          <motion.a
             href="#testimonials"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.7 }}
             className={`no-underline font-inter font-medium text-lg relative group  transition duration-300 ease-in-out ${activeSection === "testimonials" ? "text-white" : "text-white/75 hover:text-white"}`}
           >
             Testimonials
             <span
               className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "testimonials" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
             ></span>
-          </a>
+          </motion.a>
         </li>
         <li>
-          <a
+          <motion.a
             href="#faq"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.8 }}
             className={`no-underline font-inter font-medium text-lg relative group  transition duration-300 ease-in-out ${activeSection === "faq" ? "text-white" : "text-white/75 hover:text-white"}`}
           >
             FAQ
             <span
               className={`h-0.5 bg-linear-to-r from-purple-500 to-blue-600 rounded-full block scale-x-0 origin-center group-hover:scale-x-100 transition duration-300 ease-in-out ${activeSection === "faq" ? "scale-x-100" : "scale-x-0 origin-center group-hover:scale-x-100"}`}
             ></span>
-          </a>
+          </motion.a>
         </li>
       </ul>
 
       {/* Register Now Desktop Button */}
-      <a
+      <motion.a
         type="button"
         href="#register"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
         className={`hidden lg:block py-2 px-4 font-inter font-medium rounded-sm transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer ${
           activeSection === "register"
             ? "bg-linear-to-r from-purple-500 to-blue-600 text-white"
@@ -244,7 +291,7 @@ function Navbar() {
         }`}
       >
         Register Now
-      </a>
+      </motion.a>
     </nav>
   );
 }

@@ -4,6 +4,9 @@ import { BsLightningCharge } from "react-icons/bs";
 import { BsShieldCheck } from "react-icons/bs";
 import { LuChartColumn } from "react-icons/lu";
 import { GoLightBulb } from "react-icons/go";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
+motion;
 
 const features = [
   {
@@ -44,7 +47,34 @@ const features = [
   },
 ];
 
+// Mapped Elements Animation
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 function Features() {
+  // Start Animation When Visible
+  const headingRef = useRef(null);
+  const cardsRef = useRef(null);
+
+  const headingInView = useInView(headingRef, { once: true, amount: 0.3 });
+  const cardsInView = useInView(cardsRef, { once: true, amount: 0.3 });
+
   return (
     <section
       className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 pb-12 flex flex-col gap-14"
@@ -52,19 +82,37 @@ function Features() {
     >
       {/* Section Heading */}
       <div className="flex flex-col justify-center items-center gap-5">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl  font-inter text-white font-bold text-balance">
+        <motion.h2
+          ref={headingRef}
+          initial={{ opacity: 0, y: 40 }}
+          animate={headingInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+          className="text-3xl md:text-4xl lg:text-5xl  font-inter text-white font-bold text-balance"
+        >
           Features
-        </h2>
-        <p className="text-base md:text-lg font-inter text-center text-white/50 text-balance">
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          animate={headingInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+          className="text-base md:text-lg font-inter text-center text-white/50 text-balance"
+        >
           Everything you need to create a winning resume
-        </p>
+        </motion.p>
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 w-[80%] 2xl:w-[70%] mx-auto gap-10 items-stretch">
+      <motion.div
+        ref={cardsRef}
+        variants={containerVariants}
+        initial="hidden"
+        animate={cardsInView ? "visible" : "hidden"}
+        className="grid grid-cols-1 lg:grid-cols-3 w-[80%] 2xl:w-[70%] mx-auto gap-10 items-stretch"
+      >
         {features.map((feature) => (
-          <div
+          <motion.div
             key={feature.id}
+            variants={itemVariants}
             className="relative flex flex-col gap-5 p-10 bg-slate-950 mx-auto rounded-3xl border border-slate-700 hover:border-purple-500 w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group hover:-translate-y-3 shadow-2xl"
           >
             {/* Icon Box */}
@@ -80,9 +128,9 @@ function Features() {
                 {feature.body}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

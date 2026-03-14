@@ -6,7 +6,9 @@ import "swiper/css/navigation";
 import { FaStar } from "react-icons/fa";
 import { LuQuote } from "react-icons/lu";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "motion/react";
+motion;
 
 const testimonials = [
   {
@@ -43,13 +45,33 @@ const testimonials = [
   },
   {
     id: 5,
-    name: "",
+    name: "James Carter",
     role: "UX Designer at Apple",
     review:
       '"The detailed score breakdown showed me exactly what was holding my resume back. Got my dream job within a month!"',
     stars: 5,
   },
 ];
+
+// Mapped Elements Animation
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 function NavButtons() {
   const swiper = useSwiper();
@@ -75,6 +97,13 @@ function NavButtons() {
 function Testimonials() {
   const [users, setUsers] = useState([]);
 
+  // Start Animation When Visible
+  const headingRef = useRef(null);
+  const cardsRef = useRef(null);
+
+  const headingInView = useInView(headingRef, { once: true, amount: 0.3 });
+  const cardsInView = useInView(cardsRef, { once: true, amount: 0.3 });
+
   // API for Users Profile Picture
   useEffect(() => {
     fetch("https://randomuser.me/api/?results=5&seed=resumeiq")
@@ -89,16 +118,32 @@ function Testimonials() {
       className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 pb-0 lg:pb-16 flex flex-col gap-14"
     >
       <div className="flex flex-col justify-center items-center gap-5">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold text-balance">
+        <motion.h2
+          ref={headingRef}
+          initial={{ opacity: 0, y: 40 }}
+          animate={headingInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+          className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold text-balance"
+        >
           Testimonials
-        </h2>
-        <p className="text-base md:text-lg font-inter text-center text-white/50 text-balance">
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          animate={headingInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+          className="text-base md:text-lg font-inter text-center text-white/50 text-balance"
+        >
           Thousands of careers transformed and counting
-        </p>
+        </motion.p>
       </div>
 
       {/* Swiper */}
-      <div>
+      <motion.div
+        ref={cardsRef}
+        variants={containerVariants}
+        initial="hidden"
+        animate={cardsInView ? "visible" : "hidden"}
+      >
         <Swiper
           speed={800}
           modules={[Pagination, Navigation, Autoplay]}
@@ -112,7 +157,10 @@ function Testimonials() {
           <NavButtons />
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={testimonial.id}>
-              <div className="relative flex flex-col lg:flex-row items-center justify-center gap-5 mx-auto w-[80%] lg:w-[60%] bg-slate-950 rounded-3xl border border-purple-500 p-14 shadow-2xl h-full">
+              <motion.div
+                variants={itemVariants}
+                className="relative flex flex-col lg:flex-row items-center justify-center gap-5 mx-auto w-[80%] lg:w-[60%] bg-slate-950 rounded-3xl border border-purple-500 p-14 shadow-2xl h-full"
+              >
                 {/* Quotation Icon */}
                 <div className="absolute right-10 top-6 text-purple-500/10">
                   <LuQuote size={70} />
@@ -154,11 +202,11 @@ function Testimonials() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </motion.div>
     </section>
   );
 }

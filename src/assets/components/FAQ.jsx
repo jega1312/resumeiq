@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa6";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
+motion;
 
 const faqs = [
   {
@@ -40,8 +43,34 @@ const faqs = [
   },
 ];
 
+// Mapped Elements Animation
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 function FAQ() {
   const [openId, setOpenId] = useState(null);
+
+  // Start Animation When Visible
+  const headingRef = useRef(null);
+  const cardsRef = useRef(null);
+
+  const headingInView = useInView(headingRef, { once: true, amount: 0.3 });
+  const cardsInView = useInView(cardsRef, { once: true, amount: 0.3 });
 
   return (
     <section
@@ -50,22 +79,40 @@ function FAQ() {
     >
       {/* Heading */}
       <div className="flex flex-col justify-center items-center gap-5">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold text-center text-balance">
+        <motion.h2
+          ref={headingRef}
+          initial={{ opacity: 0, y: 40 }}
+          animate={headingInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+          className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold text-center text-balance"
+        >
           Frequently Asked Questions
-        </h2>
-        <p className="text-base md:text-lg font-inter text-center text-white/50 text-balance">
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          animate={headingInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+          className="text-base md:text-lg font-inter text-center text-white/50 text-balance"
+        >
           Everything you need to know about ResumeIQ
-        </p>
+        </motion.p>
       </div>
 
       {/* FAQ Section Container */}
-      <div className="w-[80%] 2xl:w-[70%] mx-auto flex flex-col gap-4">
+      <motion.div
+        ref={cardsRef}
+        variants={containerVariants}
+        initial="hidden"
+        animate={cardsInView ? "visible" : "hidden"}
+        className="w-[80%] 2xl:w-[70%] mx-auto flex flex-col gap-4"
+      >
         {faqs.map((faq) => (
-          <div
+          <motion.div
             key={faq.id}
+            variants={itemVariants}
             onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
             className={`border rounded-xl p-7 bg-slate-950 flex flex-col cursor-pointer transition group duration-300 ease-in-out hover:border-purple-500
-  ${openId === faq.id ? "border-purple-500" : "border-slate-700"}`}
+            ${openId === faq.id ? "border-purple-500" : "border-slate-700"}`}
           >
             <div className="flex items-center justify-between w-full">
               <h3 className="text-lg text-white font-inter font-bold">
@@ -74,7 +121,7 @@ function FAQ() {
               <FaChevronDown
                 size={20}
                 className={`shrink-0 transition duration-300 ease-in-out group-hover:text-purple-500
-      ${openId === faq.id ? "rotate-180 text-purple-500" : "text-white/50"}`}
+                ${openId === faq.id ? "rotate-180 text-purple-500" : "text-white/50"}`}
               />
             </div>
 
@@ -86,9 +133,9 @@ function FAQ() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

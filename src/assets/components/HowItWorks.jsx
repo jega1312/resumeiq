@@ -1,6 +1,9 @@
 import { FiUpload } from "react-icons/fi";
 import { BsStars } from "react-icons/bs";
 import { FiDownload } from "react-icons/fi";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
+motion;
 
 const processes = [
   {
@@ -26,7 +29,34 @@ const processes = [
   },
 ];
 
+// Mapped Elements Animation
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 function HowItWorks() {
+  // Start Animation When Visible
+  const headingRef = useRef(null);
+  const cardsRef = useRef(null);
+
+  const headingInView = useInView(headingRef, { once: true, amount: 0.3 });
+  const cardsInView = useInView(cardsRef, { once: true, amount: 0.3 });
+
   return (
     <section
       className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 pb-0 lg:pb-16 flex flex-col gap-14"
@@ -34,19 +64,37 @@ function HowItWorks() {
     >
       {/* Section Heading */}
       <div className="flex flex-col justify-center items-center gap-5">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl  font-inter text-white font-bold text-balance">
+        <motion.h2
+          ref={headingRef}
+          initial={{ opacity: 0, y: 40 }}
+          animate={headingInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+          className="text-3xl md:text-4xl lg:text-5xl  font-inter text-white font-bold text-balance"
+        >
           How It Works
-        </h2>
-        <p className="text-base md:text-lg font-inter text-center text-white/50 text-balance">
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          animate={headingInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+          className="text-base md:text-lg font-inter text-center text-white/50 text-balance"
+        >
           Get professional resume insights in three simple steps
-        </p>
+        </motion.p>
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 w-[80%] 2xl:w-[70%] mx-auto gap-10 items-stretch">
+      <motion.div
+        ref={cardsRef}
+        variants={containerVariants}
+        initial="hidden"
+        animate={cardsInView ? "visible" : "hidden"}
+        className="grid grid-cols-1 lg:grid-cols-3 w-[80%] 2xl:w-[70%] mx-auto gap-10 items-stretch"
+      >
         {processes.map((process) => (
-          <div
+          <motion.div
             key={process.id}
+            variants={itemVariants}
             className="relative flex flex-col gap-5 p-10 bg-slate-950 mx-auto rounded-3xl border border-slate-700 hover:border-purple-500 w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group shadow-2xl"
           >
             {/* Numbering */}
@@ -66,9 +114,9 @@ function HowItWorks() {
                 {process.body}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
