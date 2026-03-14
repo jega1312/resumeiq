@@ -406,7 +406,7 @@ function Register({ selectedPlan }) {
             initial={{ opacity: 0, x: 40 }}
             animate={headingInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="text-3xl md:text-4xl font-inter text-white font-bold text-center text-balance w-[85%] md:w-full mx-auto"
+            className="text-3xl md:text-4xl font-inter text-white font-bold text-center text-balance"
           >
             What You'll Get
           </motion.h3>
