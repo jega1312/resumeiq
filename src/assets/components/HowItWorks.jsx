@@ -69,7 +69,7 @@ function HowItWorks() {
           initial={{ opacity: 0, y: 40 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-          className="text-3xl md:text-4xl lg:text-5xl  font-inter text-white font-bold text-balance w-[80%] md:w-full mx-auto"
+          className="text-3xl md:text-4xl lg:text-5xl text-center  font-inter text-white font-bold text-balance w-[90%] md:w-full mx-auto"
         >
           How It Works
         </motion.h2>
@@ -77,7 +77,7 @@ function HowItWorks() {
           initial={{ opacity: 0, y: 40 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-          className="text-base md:text-lg font-inter text-center text-white/50 text-balance w-[80%] md:w-full mx-auto"
+          className="text-base md:text-lg font-inter text-center text-white/50 text-balance w-[90%] md:w-full mx-auto"
         >
           Get professional resume insights in three simple steps
         </motion.p>
