@@ -101,7 +101,7 @@ function Register({ selectedPlan }) {
           initial={{ opacity: 0, y: 40 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold text-center text-balance"
+          className="text-3xl md:text-4xl lg:text-5xl font-inter text-white font-bold text-center text-balance w-[80%] md:w-full mx-auto"
         >
           Optimize Your Resume Today
         </motion.h2>
@@ -109,7 +109,7 @@ function Register({ selectedPlan }) {
           initial={{ opacity: 0, y: 40 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="text-base md:text-lg font-inter text-center text-white/50 text-balance"
+          className="text-base md:text-lg font-inter text-center text-white/50 text-balance w-[80%] md:w-full mx-auto"
         >
           Take the first step toward your dream career
         </motion.p>
@@ -406,7 +406,7 @@ function Register({ selectedPlan }) {
             initial={{ opacity: 0, x: 40 }}
             animate={headingInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="text-3xl md:text-4xl font-inter text-white font-bold text-center text-balance"
+            className="text-3xl md:text-4xl font-inter text-white font-bold text-center text-balance w-[80%] md:w-full mx-auto"
           >
             What You'll Get
           </motion.h3>
