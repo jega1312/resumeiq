@@ -54,7 +54,7 @@ function Hero() {
         className="relative bg-linear-to-r from-[#03001C] to-[#1b1042] min-h-screen flex justify-center items-center lg:pt-24"
       >
         {/* Orb Glow Container */}
-        <div className="lg:pt-24 flex w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[375px] md:h-[375px] xl:w-[450px] xl:h-[450px] justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
+        <div className="lg:pt-24 flex w-[50vw] h-[50vw] max-w-[450px] max-h-[450px] min-w-[250px] min-h-[250px] justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
           <div className="w-[110%] h-[110%] shadow-lg shadow-pink-500 bg-transparent rounded-full absolute animate-spin-slow"></div>
           <div className="w-[108%] h-[108%] shadow-lg shadow-violet-500 bg-transparent rounded-full absolute rotate-90 animate-spin-medium"></div>
           <div className="w-[106%] h-[106%] shadow-lg shadow-cyan-500 bg-transparent rounded-full absolute rotate-180 animate-spin-fast"></div>
@@ -65,7 +65,7 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="bg-purple-950/75 border-[#47227b] border-2 py-2 rounded-full text-white text-xs md:text-sm  font-inter font-normal flex justify-center items-center px-5 md:px-0 md:w-[35%] lg:w-[27%] mx-auto gap-2  hover:bg-purple-900 hover:border-transparent transition duration-300 ease-in-out"
+            className="bg-purple-950/75 border-[#47227b] border-2 py-2 rounded-full text-white text-xs md:text-sm font-inter flex justify-center items-center px-5 md:px-0 md:w-[35%] lg:w-[27%] mx-auto gap-2  hover:bg-purple-900 hover:border-transparent transition duration-300 ease-in-out"
           >
             <BsGraphUpArrow size={20} />
             50,000+ Resumes Optimized
@@ -113,7 +113,7 @@ function Hero() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className=" grid grid-cols-1 lg:grid-cols-3 mx-auto w-[70%] rounded-lg"
+          className=" grid grid-cols-1 md:grid-cols-3 mx-auto w-[70%] rounded-lg"
         >
           {stats.map((stat) => (
             <motion.div
@@ -125,9 +125,7 @@ function Hero() {
               <p className="text-lg md:text-xl font-inter font-semibold text-white">
                 {stat.stat}
               </p>
-              <p className="text-base font-inter font-normal text-white">
-                {stat.label}
-              </p>
+              <p className="text-base font-inter  text-white">{stat.label}</p>
             </motion.div>
           ))}
         </motion.div>

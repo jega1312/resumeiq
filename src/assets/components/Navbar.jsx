@@ -104,7 +104,7 @@ function Navbar() {
 
       {/* Menu Mobile Dropdown */}
       <div
-        className={`h-screen ${menuOpen ? "flex" : "hidden"} lg:hidden w-full flex-col items-start justify-center gap-7 transition duration-300 ease-in-out`}
+        className={`h-screen ${menuOpen ? "flex" : "hidden"} lg:hidden w-full flex-col items-start -mt-16 justify-center gap-7 transition duration-300 ease-in-out`}
       >
         <ul className="flex flex-col items-start justify-center gap-5 list-none w-full">
           <li>

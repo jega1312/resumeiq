@@ -47,7 +47,6 @@
 }
 
 /* Swiper.js Styles */
-
 /* Pagination Dots */
 .swiper-pagination-bullet {
   background: white !important;
@@ -58,7 +57,7 @@
 
 /* Active Dot */
 .swiper-pagination-bullet-active {
-  background: #a855f7 !important; /* purple */
+  background: #a855f7 !important;
   opacity: 1;
 }
 
