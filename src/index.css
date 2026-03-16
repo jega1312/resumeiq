@@ -11,8 +11,10 @@
     scroll-behavior: smooth;
   }
 
-  html, body{
-    background: linear-gradient(to right, #03001C, #1b1042);
+  html,
+  body {
+    background: linear-gradient(to right, #03001c, #1b1042);
+    background-color: #03001c;
   }
 }
 
@@ -97,15 +99,17 @@
   border-radius: 0 0.5rem 0.5rem 0 !important;
   width: 100% !important;
   color: white !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: "Inter", sans-serif !important;
   outline: none !important;
   padding: 0 12px !important;
   font-size: 14px !important;
 }
 
 /* Focus border */
-.react-international-phone-input-container:focus-within .react-international-phone-country-selector-button,
-.react-international-phone-input-container:focus-within .react-international-phone-input {
+.react-international-phone-input-container:focus-within
+  .react-international-phone-country-selector-button,
+.react-international-phone-input-container:focus-within
+  .react-international-phone-input {
   border-color: #a855f7 !important;
 }
 
@@ -117,11 +121,11 @@
 
 /* Keep error red even when focused */
 .phone-error
-.react-international-phone-input-container:focus-within
-.react-international-phone-country-selector-button,
+  .react-international-phone-input-container:focus-within
+  .react-international-phone-country-selector-button,
 .phone-error
-.react-international-phone-input-container:focus-within
-.react-international-phone-input {
+  .react-international-phone-input-container:focus-within
+  .react-international-phone-input {
   border-color: #ef4444 !important;
 }
 /* Dropdown */
@@ -144,20 +148,40 @@
   color: white !important;
 }
 
-.react-international-phone-country-selector-dropdown__list-item--selected .react-international-phone-country-selector-dropdown__list-item-dial-code {
+.react-international-phone-country-selector-dropdown__list-item--selected
+  .react-international-phone-country-selector-dropdown__list-item-dial-code {
   color: white !important;
 }
 
 /* Checkbox Animations */
 @keyframes morph-in {
-  0% { transform: scale(0.8); border-radius: 50%; opacity: 0.5; }
-  60% { transform: scale(1.15); border-radius: 30%; }
-  100% { transform: scale(1); border-radius: 4px; opacity: 1; }
+  0% {
+    transform: scale(0.8);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+  60% {
+    transform: scale(1.15);
+    border-radius: 30%;
+  }
+  100% {
+    transform: scale(1);
+    border-radius: 4px;
+    opacity: 1;
+  }
 }
 
 @keyframes morph-out {
-  0% { transform: scale(1); border-radius: 4px; opacity: 1; }
-  100% { transform: scale(0.8); border-radius: 50%; opacity: 0.5; }
+  0% {
+    transform: scale(1);
+    border-radius: 4px;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
 }
 
 .checkbox-checked {
