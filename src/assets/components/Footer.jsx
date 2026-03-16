@@ -1,4 +1,4 @@
-import { SlSocialLinkedin, SlEnvolope } from "react-icons/sl";
+import { SlSocialLinkedin, SlEnvolope, SlGlobe } from "react-icons/sl";
 import { FiGithub } from "react-icons/fi";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
@@ -29,20 +29,27 @@ const legalLinks = [
 const socialLinks = [
   {
     id: 1,
+    href: "https://jega1312.github.io/portfolio/",
+    icon: <SlGlobe size={20} />,
+    target: "_blank",
+    rel: "noopener noreferrer",
+  },
+  {
+    id: 2,
     href: "https://github.com/jega1312",
     icon: <FiGithub size={20} />,
     target: "_blank",
     rel: "noopener noreferrer",
   },
   {
-    id: 2,
+    id: 3,
     href: "https://www.linkedin.com/in/jegathiswaran-thiaghu/",
     icon: <SlSocialLinkedin size={20} />,
     target: "_blank",
     rel: "noopener noreferrer",
   },
   {
-    id: 3,
+    id: 4,
     href: "mailto:jegathiaghu@gmail.com?subject=Hello%20from%20ResumeIQ",
     icon: <SlEnvolope size={20} />,
   },
