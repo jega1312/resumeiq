@@ -11,7 +11,7 @@
     scroll-behavior: smooth;
   }
 
-  body{
+  html, body{
     background: linear-gradient(to right, #03001C, #1b1042);
   }
 }
