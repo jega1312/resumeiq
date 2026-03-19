@@ -43,6 +43,7 @@ ResumeIQ is a **fictional SaaS product microsite** designed to mirror the qualit
 | Framer Motion | 12 | Scroll & entrance animations |
 | React Hook Form | 7 | Form state & validation |
 | Swiper.js | 11 | Testimonials carousel |
+| Random User API | — | Testimonial profile pictures |
 | React International Phone | 3 | Phone input with dial codes |
 | React Icons | 5 | Icon library |
 
@@ -56,6 +57,7 @@ ResumeIQ is a **fictional SaaS product microsite** designed to mirror the qualit
 - **Form Validation** — Full validation using React Hook Form + manual validation for custom inputs
 - **Floating Label Inputs** — Custom animated floating labels on all form fields
 - **Testimonials Carousel** — Auto-playing carousel with custom navigation using Swiper.js
+- **Live API Integration** — Fetches real profile pictures from Random User API for testimonials
 - **FAQ Accordion** — Smooth animated accordion using CSS grid technique
 - **Pricing → Register Flow** — Plan selection pre-selects the form dropdown via lifted state
 - **Mobile Hamburger Menu** — Animated hamburger with full-screen overlay
