@@ -56,6 +56,7 @@ ResumeIQ is a **fictional SaaS product microsite** designed to mirror the qualit
 - **Active Section Detection** — Navbar highlights current section using scroll position
 - **Form Validation** — Full validation using React Hook Form + manual validation for custom inputs
 - **Floating Label Inputs** — Custom animated floating labels on all form fields
+- **Custom Animated Checkbox** — Morphing checkbox animation for Terms & Conditions
 - **Testimonials Carousel** — Auto-playing carousel with custom navigation using Swiper.js
 - **Live API Integration** — Fetches real profile pictures from Random User API for testimonials
 - **FAQ Accordion** — Smooth animated accordion using CSS grid technique
@@ -79,6 +80,7 @@ ResumeIQ is a **fictional SaaS product microsite** designed to mirror the qualit
 | Form Validation | React Hook Form + manual |
 | `AnimatePresence` | Scroll to top button enter/exit |
 | Third Party Integration | Swiper, PhoneInput, React Hook Form |
+| Stagger Animations | Card entrance animations in all sections |
 
 ---
 
