@@ -1,4 +1,4 @@
-# ResumeIQ — Conceptual AI Resume Optimization Product SaaS Microsite
+# ResumeIQ — Conceptual AI Resume Optimization Product SaaS Microsite 📝🧠
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat&logo=vite)
@@ -167,4 +167,4 @@ npm install motion
 
 ## 📝 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the MIT License ⚖.
