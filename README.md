@@ -139,13 +139,14 @@ npm run build
 ## 📦 NPM Packages Used
 
 ```bash
+npm install tailwindcss @tailwindcss/vite
 npm install react-hook-form
 npm install swiper
 npm install react-international-phone
 npm install react-icons
 npm install motion
 ```
-
+> **Note:** React, ReactDOM, and Vite are scaffolded automatically via `npm create vite@latest` and do not require separate installation.
 ---
 
 ## 🎨 Design Decisions
