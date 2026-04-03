@@ -95,7 +95,7 @@ function Register({ selectedPlan }) {
       className="bg-linear-to-r from-[#03001C] to-[#1b1042] pt-32 pb-0 lg:pb-16 flex flex-col gap-14"
     >
       {/* Heading */}
-      <div className="flex flex-col justify-center items-center gap-5">
+      <div className="flex flex-col items-center justify-center gap-5">
         <motion.h2
           ref={headingRef}
           initial={{ opacity: 0, y: 40 }}
@@ -118,15 +118,15 @@ function Register({ selectedPlan }) {
       {/* Main Container */}
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:justify-center place-items-center w-full md:w-[90%] max-w-6xl mx-auto gap-10 overflow-hidden">
         {/* Form Container */}
-        <div className="w-full p-10 flex justify-center items-center">
+        <div className="flex items-center justify-center w-full p-10">
           {/* Registration Form */}
           {isSubmitted ? (
             <div className="py-10 px-5 sm:px-10 flex flex-col items-center justify-center bg-slate-950 border-purple-500 border rounded-2xl w-full gap-5 min-h-[400px]">
               <IoCheckmarkCircle size={60} className="text-green-500" />
-              <h3 className="text-2xl font-inter font-bold text-white text-center">
+              <h3 className="text-2xl font-bold text-center text-white font-inter">
                 You're on the list! 🎉
               </h3>
-              <p className="text-base font-inter text-white/50 text-center">
+              <p className="text-base text-center font-inter text-white/50">
                 Thanks for registering. We'll notify you when ResumeIQ launches!
               </p>
             </div>
@@ -160,7 +160,7 @@ function Register({ selectedPlan }) {
                   }
                 },
               )}
-              className="py-10 px-5 sm:px-10 flex flex-col items-start bg-slate-950 border-purple-500 border rounded-2xl w-full gap-8"
+              className="flex flex-col items-start w-full gap-8 px-5 py-10 border border-purple-500 sm:px-10 bg-slate-950 rounded-2xl"
             >
               {/* Name Input */}
               <div className="relative w-full">
@@ -196,7 +196,7 @@ function Register({ selectedPlan }) {
                   Full Name
                 </label>
                 {errors.name && (
-                  <p className="text-red-500 text-xs mt-2 font-inter">
+                  <p className="mt-2 text-xs text-red-500 font-inter">
                     {errors.name.message}
                   </p>
                 )}
@@ -236,7 +236,7 @@ function Register({ selectedPlan }) {
                   Email Address
                 </label>
                 {errors.email && (
-                  <p className="text-red-500 text-xs mt-2 font-inter">
+                  <p className="mt-2 text-xs text-red-500 font-inter">
                     {errors.email.message}
                   </p>
                 )}
@@ -286,7 +286,7 @@ function Register({ selectedPlan }) {
                   Phone Number
                 </label>
                 {phoneError && (
-                  <p className="text-red-500 text-xs mt-2 font-inter">
+                  <p className="mt-2 text-xs text-red-500 font-inter">
                     {phoneError}
                   </p>
                 )}
@@ -330,7 +330,7 @@ function Register({ selectedPlan }) {
                   ))}
                 </select>
                 {errors.plan && (
-                  <p className="text-red-500 text-xs mt-2 font-inter">
+                  <p className="mt-2 text-xs text-red-500 font-inter">
                     {errors.plan.message}
                   </p>
                 )}
@@ -371,10 +371,10 @@ function Register({ selectedPlan }) {
 
                   <label
                     htmlFor="terms"
-                    className="font-inter text-white text-sm flex gap-1"
+                    className="flex gap-1 text-sm text-white font-inter"
                   >
                     I agree to the
-                    <span className="text-purple-500 cursor-pointer border-b border-transparent hover:border-purple-500 transition duration-300 ease-in-out">
+                    <span className="text-purple-500 transition duration-300 ease-in-out border-b border-transparent cursor-pointer hover:border-purple-500">
                       Terms & Conditions
                     </span>
                   </label>
@@ -382,7 +382,7 @@ function Register({ selectedPlan }) {
 
                 {/* Error below */}
                 {termsError && (
-                  <p className="text-red-500 text-xs font-inter mt-1">
+                  <p className="mt-1 text-xs text-red-500 font-inter">
                     {termsError}
                   </p>
                 )}
@@ -392,7 +392,7 @@ function Register({ selectedPlan }) {
 
               <button
                 type="submit"
-                className="h-12 text-sm sm:text-base w-full bg-purple-500 font-inter text-white/75 hover:text-white rounded-full hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 transition duration-300 ease-in-out hover:cursor-pointer"
+                className="w-full h-12 text-sm transition duration-300 ease-in-out bg-purple-500 rounded-full sm:text-base font-inter text-white/75 hover:text-white hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 hover:cursor-pointer"
               >
                 Get Early Access
               </button>
@@ -406,7 +406,7 @@ function Register({ selectedPlan }) {
             initial={{ opacity: 0, x: 40 }}
             animate={headingInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="text-3xl md:text-4xl font-inter text-white font-bold text-center text-balance"
+            className="text-3xl font-bold text-center text-transparent md:text-4xl lg:text-5xl font-inter text-balance bg-linear-to-r from-purple-500 to-blue-600 bg-clip-text"
           >
             What You'll Get
           </motion.h3>
@@ -416,13 +416,13 @@ function Register({ selectedPlan }) {
             variants={containerVariants}
             initial="hidden"
             animate={headingInView ? "visible" : "hidden"}
-            className="flex flex-col gap-5 items-start"
+            className="flex flex-col items-start gap-5"
           >
             {benefits.map((benefit, index) => (
               <motion.li
                 key={index}
                 variants={itemVariants}
-                className="text-white font-inter text-base md:text-lg flex items-center gap-3"
+                className="flex items-center gap-3 text-base text-white font-inter md:text-lg"
               >
                 <IoCheckmarkCircle size={20} className="text-purple-500" />
                 {benefit}

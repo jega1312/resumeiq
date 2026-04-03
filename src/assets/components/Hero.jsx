@@ -60,7 +60,7 @@ function Hero() {
           <div className="w-[106%] h-[106%] shadow-xl shadow-cyan-500 bg-transparent rounded-full absolute rotate-180 animate-spin-fast"></div>
         </div>
 
-        <div className="flex flex-col justify-center items-center gap-5 xl:gap-7 z-30">
+        <div className="z-30 flex flex-col items-center justify-center gap-5 xl:gap-7">
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -75,10 +75,10 @@ function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center text-white font-inter font-bold md:leading-20"
+            className="text-2xl font-bold text-center text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-inter md:leading-20"
           >
             Transform Your Resume With <br />
-            <span className="bg-linear-to-r from-purple-500 to-blue-600 bg-clip-text text-transparent text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+            <span className="text-4xl text-transparent bg-linear-to-r from-purple-500 to-blue-600 bg-clip-text sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
               AI Intelligence
             </span>
           </motion.h1>
@@ -122,10 +122,10 @@ function Hero() {
               className={`py-5 flex flex-col justify-center items-center ${stat.border}`}
             >
               {stat.icon}
-              <p className="text-lg md:text-xl font-inter font-semibold text-white">
+              <p className="text-lg font-semibold text-white md:text-xl font-inter">
                 {stat.stat}
               </p>
-              <p className="text-base font-inter  text-white">{stat.label}</p>
+              <p className="text-base text-white font-inter">{stat.label}</p>
             </motion.div>
           ))}
         </motion.div>
