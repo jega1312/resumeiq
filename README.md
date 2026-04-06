@@ -1,11 +1,11 @@
-# ResumeIQ — Conceptual AI Resume Optimization Product SaaS Microsite 📝🧠
+# ResumeIQ — Conceptual AI Resume Optimization Product SaaS Landing Page 📝🧠
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat&logo=vite)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat&logo=tailwindcss)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-EF008F?style=flat&logo=framer)
 
-> A conceptual SaaS product microsite for an AI-powered resume optimization tool. Built as a frontend portfolio project to demonstrate real-world React skills, modern UI/UX patterns, and production-level component architecture.
+> A conceptual SaaS product landing page for an AI-powered resume optimization tool. Built as a frontend portfolio project to demonstrate real-world React skills, modern UI/UX patterns, and production-level component architecture.
 
 ---
 
@@ -29,7 +29,7 @@
 
 ## 💡 About The Project
 
-ResumeIQ is a **fictional SaaS product microsite** designed to mirror the quality and structure of real-world startup landing pages. The project covers a full user journey — from hero section to pricing, registration, and FAQ — with attention to responsiveness, animations, and user experience.
+ResumeIQ is a **fictional SaaS product landing page** designed to mirror the quality and structure of real-world startup landing pages. The project covers a full user journey — from hero section to pricing, registration, and FAQ — with attention to responsiveness, animations, and user experience.
 
 ---
 
