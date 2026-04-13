@@ -1,10 +1,9 @@
 import { useForm } from "react-hook-form";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import { motion, useInView } from "motion/react";
-import { useRef } from "react";
 motion;
 
 const benefits = [

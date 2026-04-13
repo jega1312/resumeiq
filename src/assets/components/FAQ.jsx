@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FaChevronDown } from "react-icons/fa6";
 import { motion, useInView } from "motion/react";
-import { useRef } from "react";
 motion;
 
 const faqs = [
