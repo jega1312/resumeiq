@@ -86,9 +86,12 @@ function Navbar() {
       </motion.a>
 
       {/* Hamburger Menu */}
-      <button
+      <motion.button
         type="button"
         onClick={toggleOpen}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         className="relative flex items-center lg:hidden flex-col gap-2 h-5 w-8"
       >
         <span
@@ -100,7 +103,7 @@ function Navbar() {
         <span
           className={`absolute h-0.75 w-8 bg-white rounded-full  transition duration-300 ease-in-out ${menuOpen ? "-rotate-45 top-2" : "top-4"}`}
         ></span>
-      </button>
+      </motion.button>
 
       {/* Menu Mobile Dropdown */}
       <div
@@ -114,7 +117,7 @@ function Navbar() {
               animate={hasOpened ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
               onClick={() => setMenuOpen(false)}
-              className={`no-underline font-inter font-medium text-3xl relative group transition duration-300 ease-in-out ${activeSection === "howitworks" ? "text-white" : "text-white/75 hover:text-white"}`}
+              className={`no-underline font-inter font-medium text-2xl relative group transition-colors duration-300 ease-in-out ${activeSection === "howitworks" ? "text-white" : "text-white/75 hover:text-white"}`}
             >
               How It Works
               <span
@@ -129,7 +132,7 @@ function Navbar() {
               animate={hasOpened ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
               onClick={() => setMenuOpen(false)}
-              className={`no-underline font-inter font-medium text-3xl relative group  transition duration-300 ease-in-out ${activeSection === "features" ? "text-white" : "text-white/75 hover:text-white"}`}
+              className={`no-underline font-inter font-medium text-2xl relative group transition-colors duration-300 ease-in-out ${activeSection === "features" ? "text-white" : "text-white/75 hover:text-white"}`}
             >
               Features
               <span
@@ -144,7 +147,7 @@ function Navbar() {
               animate={hasOpened ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
               onClick={() => setMenuOpen(false)}
-              className={`no-underline font-inter font-medium text-3xl relative group  transition duration-300 ease-in-out ${activeSection === "pricing" ? "text-white" : "text-white/75 hover:text-white"}`}
+              className={`no-underline font-inter font-medium text-2xl relative group transition-colors duration-300 ease-in-out ${activeSection === "pricing" ? "text-white" : "text-white/75 hover:text-white"}`}
             >
               Pricing
               <span
@@ -159,7 +162,7 @@ function Navbar() {
               animate={hasOpened ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
               onClick={() => setMenuOpen(false)}
-              className={`no-underline font-inter font-medium text-3xl relative group  transition duration-300 ease-in-out ${activeSection === "testimonials" ? "text-white" : "text-white/75 hover:text-white"}`}
+              className={`no-underline font-inter font-medium text-2xl relative group transition-colors duration-300 ease-in-out ${activeSection === "testimonials" ? "text-white" : "text-white/75 hover:text-white"}`}
             >
               Testimonials
               <span
@@ -174,7 +177,7 @@ function Navbar() {
               animate={hasOpened ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
               onClick={() => setMenuOpen(false)}
-              className={`no-underline font-inter font-medium text-3xl relative group  transition duration-300 ease-in-out ${activeSection === "faq" ? "text-white" : "text-white/75 hover:text-white"}`}
+              className={`no-underline font-inter font-medium text-2xl relative group transition-colors duration-300 ease-in-out ${activeSection === "faq" ? "text-white" : "text-white/75 hover:text-white"}`}
             >
               FAQ
               <span
@@ -192,7 +195,7 @@ function Navbar() {
           animate={hasOpened ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
           onClick={() => setMenuOpen(false)}
-          className={`py-2.5 px-4 font-inter font-medium text-white text-lg rounded-sm transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer
+          className={`py-2.5 px-4 font-inter font-medium text-white text-lg rounded-sm transition-colors duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer
           ${
             activeSection === "register"
               ? "bg-linear-to-r from-purple-500 to-blue-600"
@@ -211,7 +214,7 @@ function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
-            className={`no-underline font-inter font-medium text-lg relative group  transition duration-300 ease-in-out ${activeSection === "howitworks" ? "text-white" : "text-white/75 hover:text-white"}`}
+            className={`no-underline font-inter font-medium text-lg relative group transition-colors duration-300 ease-in-out ${activeSection === "howitworks" ? "text-white" : "text-white/75 hover:text-white"}`}
           >
             How It Works
             <span
@@ -225,7 +228,7 @@ function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
-            className={`no-underline font-inter font-medium text-lg relative group  transition duration-300 ease-in-out ${activeSection === "features" ? "text-white" : "text-white/75 hover:text-white"}`}
+            className={`no-underline font-inter font-medium text-lg relative group transition-colors duration-300 ease-in-out ${activeSection === "features" ? "text-white" : "text-white/75 hover:text-white"}`}
           >
             Features
             <span
@@ -239,7 +242,7 @@ function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
-            className={`no-underline font-inter font-medium text-lg relative group  transition duration-300 ease-in-out ${activeSection === "pricing" ? "text-white" : "text-white/75 hover:text-white"}`}
+            className={`no-underline font-inter font-medium text-lg relative group transition-colors duration-300 ease-in-out ${activeSection === "pricing" ? "text-white" : "text-white/75 hover:text-white"}`}
           >
             Pricing
             <span
@@ -253,7 +256,7 @@ function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.7 }}
-            className={`no-underline font-inter font-medium text-lg relative group  transition duration-300 ease-in-out ${activeSection === "testimonials" ? "text-white" : "text-white/75 hover:text-white"}`}
+            className={`no-underline font-inter font-medium text-lg relative group transition-colors duration-300 ease-in-out ${activeSection === "testimonials" ? "text-white" : "text-white/75 hover:text-white"}`}
           >
             Testimonials
             <span
@@ -267,7 +270,7 @@ function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.8 }}
-            className={`no-underline font-inter font-medium text-lg relative group  transition duration-300 ease-in-out ${activeSection === "faq" ? "text-white" : "text-white/75 hover:text-white"}`}
+            className={`no-underline font-inter font-medium text-lg relative group transition-colors duration-300 ease-in-out ${activeSection === "faq" ? "text-white" : "text-white/75 hover:text-white"}`}
           >
             FAQ
             <span

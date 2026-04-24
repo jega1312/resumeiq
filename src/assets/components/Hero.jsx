@@ -54,7 +54,7 @@ function Hero() {
         className="relative bg-linear-to-r from-[#03001C] to-[#1b1042] min-h-screen flex justify-center items-center lg:pt-24"
       >
         {/* Orb Glow Container */}
-        <div className="lg:pt-24 flex w-[50vw] h-[50vw] max-w-[450px] max-h-[450px] min-w-[250px] min-h-[250px] justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
+        <div className="lg:pt-24 flex w-[50vw] h-[50vw] sm:max-w-[250px] sm:max-h-[250px] md:max-w-[300px] md:max-h-[300px] lg:max-w-[330px] lg:max-h-[330px] xl:max-w-[350px] xl:max-h-[350px] 2xl:max-w-[450px] 2xl:max-h-[450px] min-w-[250px] min-h-[250px] justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
           <div className="w-[110%] h-[110%] shadow-xl shadow-pink-500 bg-transparent rounded-full absolute animate-spin-slow"></div>
           <div className="w-[108%] h-[108%] shadow-xl shadow-violet-500 bg-transparent rounded-full absolute rotate-90 animate-spin-medium"></div>
           <div className="w-[106%] h-[106%] shadow-xl shadow-cyan-500 bg-transparent rounded-full absolute rotate-180 animate-spin-fast"></div>
