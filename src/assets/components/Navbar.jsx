@@ -281,10 +281,16 @@ function Navbar() {
       <motion.a
         type="button"
         href="#register"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-        className={`hidden lg:block py-2 px-4 font-inter font-medium rounded-sm transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer ${
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+          delay: 0.3,
+          scale: { duration: 0.3 },
+        }}
+        whileHover={{ scale: 1.1 }}
+        className={`hidden lg:block py-2 px-4 font-inter font-medium rounded-sm transition-colors duration-300 relative hover:cursor-pointer ${
           activeSection === "register"
             ? "bg-linear-to-r from-purple-500 to-blue-600 text-white"
             : "bg-purple-500 text-white/90 hover:text-white hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600"
