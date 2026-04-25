@@ -20,7 +20,7 @@
 ### Desktop View 🖥
 ![Hero Section](./screenshots/hero.png)
 ![Features Section](./screenshots/register.png)
-![Register Form](./screenshots/pricing.png)
+![Register Section](./screenshots/pricing.png)
 
 ### Mobile View 📱
 ![Mobile View](./screenshots/mobile.png)
