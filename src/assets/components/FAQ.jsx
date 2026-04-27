@@ -110,11 +110,17 @@ function FAQ() {
             key={faq.id}
             variants={itemVariants}
             onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
-            className={`border rounded-xl p-7 bg-slate-950 flex flex-col cursor-pointer transition group duration-300 ease-in-out hover:border-purple-500
+            className={`border rounded-xl p-7 bg-slate-950 flex flex-col cursor-pointer transition-colors group duration-300 ease-in-out hover:border-purple-500
             ${openId === faq.id ? "border-purple-500" : "border-slate-700"}`}
           >
             <div className="flex items-center justify-between w-full">
-              <h3 className="text-lg text-white font-inter font-bold">
+              <h3
+                className={`text-lg font-inter font-bold transition-all duration-300  ${
+                  openId === faq.id
+                    ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-600"
+                    : "text-white group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-blue-600"
+                }`}
+              >
                 {faq.question}
               </h3>
               <FaChevronDown
@@ -127,7 +133,7 @@ function FAQ() {
             {/* Answer */}
             <div className={`faq-answer ${openId === faq.id ? "open" : ""}`}>
               <div>
-                <p className="text-base text-slate-400 font-inter pt-3">
+                <p className="text-base text-white font-inter pt-3">
                   {faq.answer}
                 </p>
               </div>

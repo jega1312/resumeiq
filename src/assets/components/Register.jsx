@@ -52,6 +52,7 @@ function Register({ selectedPlan }) {
     handleSubmit,
     setValue,
     watch,
+    reset,
     clearErrors,
     formState: { errors },
   } = useForm();
@@ -136,7 +137,7 @@ function Register({ selectedPlan }) {
               animate={headingInView ? "visible" : "hidden"}
               onSubmit={handleSubmit(
                 (data) => {
-                  if (!phone || phone.length < 8) {
+                  if (phone.replace(/\D/g, "").length < 8) {
                     setPhoneError("Enter a valid phone number");
                     return;
                   }
@@ -146,11 +147,14 @@ function Register({ selectedPlan }) {
                     return;
                   }
                   setIsSubmitted(true);
+                  reset();
+                  setPhone("");
+                  setPhoneError("");
 
                   console.log({ ...data, phone });
                 },
                 () => {
-                  if (!phone || phone.length < 8) {
+                  if (phone.replace(/\D/g, "").length < 8) {
                     setPhoneError("Enter a valid phone number");
                   }
 

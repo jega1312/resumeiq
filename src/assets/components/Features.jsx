@@ -11,37 +11,37 @@ motion;
 const features = [
   {
     id: 1,
-    icon: <CgNotes size={30} />,
+    icon: <CgNotes size={30} className="group-hover:text-white" />,
     heading: "ATS Optimization",
     body: "Ensure your resume passes Applicant Tracking Systems with our advanced scanning technology.",
   },
   {
     id: 2,
-    icon: <FaBullseye size={30} />,
+    icon: <FaBullseye size={30} className="group-hover:text-white" />,
     heading: "Keyword Analysis",
     body: "Get tailored keyword suggestions based on your target job description and industry.",
   },
   {
     id: 3,
-    icon: <BsLightningCharge size={30} />,
+    icon: <BsLightningCharge size={30} className="group-hover:text-white" />,
     heading: "Instant Feedback",
     body: "Receive real-time suggestions and improvements as you upload your resume.",
   },
   {
     id: 4,
-    icon: <BsShieldCheck size={30} />,
+    icon: <BsShieldCheck size={30} className="group-hover:text-white" />,
     heading: "Privacy First",
     body: "Your data is encrypted and secure. We never share your information with third parties.",
   },
   {
     id: 5,
-    icon: <LuChartColumn size={30} />,
+    icon: <LuChartColumn size={30} className="group-hover:text-white" />,
     heading: "Score & Metrics",
     body: "Get a detailed score breakdown with metrics on readability, format, and content quality.",
   },
   {
     id: 6,
-    icon: <GoLightBulb size={30} />,
+    icon: <GoLightBulb size={30} className="group-hover:text-white" />,
     heading: "Expert Tips",
     body: "Access professional writing tips and best practices from industry recruiters.",
   },
@@ -113,7 +113,8 @@ function Features() {
           <motion.div
             key={feature.id}
             variants={itemVariants}
-            className="relative flex flex-col gap-5 p-10 bg-slate-950 mx-auto rounded-3xl border border-slate-700 hover:border-purple-500 w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group hover:-translate-y-3 shadow-2xl"
+            whileHover={{ y: -12 }}
+            className="relative flex flex-col gap-5 p-10 bg-slate-950 mx-auto rounded-3xl border border-slate-700 hover:border-purple-500 w-full hover:bg-purple-950/20 transition-colors duration-300 ease-in-out group shadow-2xl"
           >
             {/* Icon Box */}
             <div className="p-3 w-fit bg-purple-500 border border-transparent group-hover:border-purple-700 group-hover:bg-linear-to-r group-hover:from-purple-500 group-hover:to-blue-600 rounded-xl group-hover:scale-110 transition duration-300 ease-in-out">

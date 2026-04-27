@@ -9,21 +9,21 @@ const processes = [
   {
     id: 1,
     numbering: "01",
-    icon: <FiUpload size={30} />,
+    icon: <FiUpload size={30} className="group-hover:text-white" />,
     heading: "Upload Your Resume",
     body: "Simply drag and drop your resume or paste your text. We support all major formats including PDF, DOC, and TXT.",
   },
   {
     id: 2,
     numbering: "02",
-    icon: <BsStars size={30} />,
+    icon: <BsStars size={30} className="group-hover:text-white" />,
     heading: "AI Analysis",
     body: "Our advanced AI scans your resume for ATS compatibility, keyword optimization, and industry best practices.",
   },
   {
     id: 3,
     numbering: "03",
-    icon: <FiDownload size={30} />,
+    icon: <FiDownload size={30} className="group-hover:text-white" />,
     heading: "Get Insights",
     body: "Receive a detailed report with actionable recommendations to improve your resume and increase interview chances.",
   },
@@ -69,7 +69,7 @@ function HowItWorks() {
           initial={{ opacity: 0, y: 40 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-          className="text-3xl md:text-4xl lg:text-5xl text-center  font-inter text-white font-bold text-balance w-[85%] md:w-full mx-auto"
+          className="text-3xl md:text-4xl lg:text-5xl text-center font-inter text-white font-bold text-balance w-[85%] md:w-full mx-auto"
         >
           How It Works
         </motion.h2>
@@ -95,7 +95,7 @@ function HowItWorks() {
           <motion.div
             key={process.id}
             variants={itemVariants}
-            className="relative flex flex-col gap-5 p-10 bg-slate-950 mx-auto rounded-3xl border border-slate-700 hover:border-purple-500 w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group shadow-2xl"
+            className="relative flex flex-col gap-5 p-10 bg-slate-950 mx-auto rounded-3xl border border-slate-700 hover:border-purple-500 w-full hover:bg-purple-950/20 transition-colors duration-300 group shadow-2xl"
           >
             {/* Numbering */}
             <div className="absolute right-6 top-5 text-7xl font-inter text-white/10 font-bold group-hover:bg-linear-to-r group-hover:from-purple-500 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent group-hover:transition group-hover:duration-300 group-hover:ease-in-out">

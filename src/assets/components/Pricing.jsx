@@ -110,7 +110,8 @@ function Pricing({ setSelectedPlan }) {
           <motion.div
             key={plan.id}
             variants={itemVariants}
-            className="relative flex flex-col justify-between items-center gap-10 p-10 bg-slate-950 mx-auto rounded-3xl border border-slate-700 hover:border-purple-500 w-full hover:bg-purple-950/20 transition duration-300 ease-in-out group shadow-2xl hover:scale-105"
+            whileHover={{ scale: 1.05 }}
+            className="relative flex flex-col justify-between items-center gap-10 p-10 bg-slate-950 mx-auto rounded-3xl border border-slate-700 hover:border-purple-500 w-full hover:bg-purple-950/20 transition-colors duration-300 ease-in-out group shadow-2xl"
           >
             <div className="flex flex-col items-center gap-10">
               <div className="flex flex-col items-center justify-center gap-5">
