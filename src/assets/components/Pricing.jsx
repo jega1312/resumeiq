@@ -1,5 +1,5 @@
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
-import { motion, useInView } from "motion/react";
+import { easeOut, motion, useInView } from "motion/react";
 import { useRef } from "react";
 motion;
 
@@ -110,7 +110,7 @@ function Pricing({ setSelectedPlan }) {
           <motion.div
             key={plan.id}
             variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, ease: easeOut }}
             className="relative flex flex-col justify-between items-center gap-10 p-10 bg-slate-950 mx-auto rounded-3xl border border-slate-700 hover:border-purple-500 w-full hover:bg-purple-950/20 transition-colors duration-300 ease-in-out group shadow-2xl"
           >
             <div className="flex flex-col items-center gap-10">

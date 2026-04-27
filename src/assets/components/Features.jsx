@@ -4,7 +4,7 @@ import { BsLightningCharge } from "react-icons/bs";
 import { BsShieldCheck } from "react-icons/bs";
 import { LuChartColumn } from "react-icons/lu";
 import { GoLightBulb } from "react-icons/go";
-import { motion, useInView } from "motion/react";
+import { easeOut, motion, useInView } from "motion/react";
 import { useRef } from "react";
 motion;
 
@@ -113,7 +113,7 @@ function Features() {
           <motion.div
             key={feature.id}
             variants={itemVariants}
-            whileHover={{ y: -12 }}
+            whileHover={{ y: -12, ease: easeOut }}
             className="relative flex flex-col gap-5 p-10 bg-slate-950 mx-auto rounded-3xl border border-slate-700 hover:border-purple-500 w-full hover:bg-purple-950/20 transition-colors duration-300 ease-in-out group shadow-2xl"
           >
             {/* Icon Box */}
