@@ -256,7 +256,7 @@ function Footer() {
             variants={socialContainerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="flex gap-5"
+            className="flex items-center gap-5"
           >
             {socialLinks.map((social) => (
               <motion.a
@@ -265,9 +265,9 @@ function Footer() {
                 target={social.target}
                 rel={social.rel}
                 variants={socialItemVariants}
-                className="bg-slate-950 hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 border border-slate-700 p-3 rounded-lg group hover:border-purple-700 flex justify-center items-center transition duration-300 ease-in-out"
+                className="bg-slate-950 hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 border border-slate-700 p-3 rounded-lg group hover:border-purple-700 flex justify-center items-center transition-colors duration-300 ease-in-out"
               >
-                <span className="text-slate-400 group-hover:text-white transition duration-300 ease-in-out">
+                <span className="text-slate-400 group-hover:text-white transition-colors duration-300 ease-in-out">
                   {social.icon}
                 </span>
               </motion.a>
