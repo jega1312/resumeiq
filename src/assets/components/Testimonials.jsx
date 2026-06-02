@@ -100,6 +100,7 @@ function Testimonials() {
   // Start Animation When Visible
   const headingRef = useRef(null);
   const cardsRef = useRef(null);
+  const swiperRef = useRef(null);
 
   const headingInView = useInView(headingRef, { once: true, amount: 0.3 });
   const cardsInView = useInView(cardsRef, { once: true, amount: 0.3 });
@@ -111,6 +112,17 @@ function Testimonials() {
       .then((data) => setUsers(data.results))
       .catch((error) => console.error("Failed to fetch users:", error));
   }, []);
+
+  // Autoplay starts on Visible
+  useEffect(() => {
+    if (!swiperRef.current) return;
+
+    if (cardsInView) {
+      swiperRef.current.autoplay.start();
+    } else {
+      swiperRef.current.autoplay.stop();
+    }
+  }, [cardsInView]);
 
   return (
     <section
@@ -152,7 +164,8 @@ function Testimonials() {
           loop={true}
           navigation={false}
           pagination={{ clickable: true }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
         >
           <NavButtons />
           {testimonials.map((testimonial, index) => (
