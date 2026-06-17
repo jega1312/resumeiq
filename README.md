@@ -1,4 +1,4 @@
-# ResumeIQ — Conceptual AI Resume Optimization Product SaaS Landing Page 📝🧠
+# ResumeIQ — Conceptual AI Resume Optimization SaaS Product Landing Page 📝🧠
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat&logo=vite)
