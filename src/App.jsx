@@ -59,7 +59,7 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 40 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed z-50 flex items-center justify-center w-10 h-10 transition-colors duration-300 border border-purple-500 shadow-2xl bottom-4 right-4 rounded-lg bg-slate-950 hover:cursor-pointer group hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 hover:border-purple-700"
+            className="fixed z-50 flex items-center justify-center w-10 h-10 transition-colors border border-purple-500 shadow-2xl bottom-4 right-4 rounded-lg bg-slate-950 hover:cursor-pointer group hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 hover:border-purple-700"
           >
             <FaChevronUp
               size={15}

@@ -65,7 +65,7 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="bg-purple-950/75 border-[#47227b] border-2 py-2 rounded-full text-white text-xs md:text-sm font-inter flex justify-center items-center px-5 md:px-0 md:w-[35%] lg:w-[27%] mx-auto gap-2  hover:bg-purple-900 hover:border-transparent transition duration-300 ease-in-out"
+            className="bg-purple-950/75 border-[#47227b] border-2 py-2 rounded-full text-white text-xs md:text-sm font-inter flex justify-center items-center px-5 md:px-0 md:w-[35%] lg:w-[27%] mx-auto gap-2  hover:bg-purple-900 hover:border-transparent"
           >
             <BsGraphUpArrow size={20} />
             50,000+ Resumes Optimized
@@ -100,7 +100,7 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
-            className="py-2 px-5 text-center sm:px-0 text-sm sm:text-base sm:w-[20%] lg:w-[15%] bg-purple-500 font-inter font-medium text-white/90 hover:text-white rounded-sm hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600 transition duration-300 ease-in-out relative hover:scale-110 hover:cursor-pointer"
+            className="py-2 px-5 text-center sm:px-0 text-sm sm:text-base sm:w-[20%] lg:w-[15%] bg-purple-500 font-inter font-medium text-white/90 hover:text-white rounded-sm hover:bg-linear-to-r hover:from-purple-500 hover:to-blue-600statu relative hover:scale-110 hover:cursor-pointer"
           >
             Get Started
           </motion.a>
