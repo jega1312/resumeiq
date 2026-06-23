@@ -75,11 +75,11 @@ function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-            className="text-2xl font-bold text-center text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-inter md:leading-20"
+            className="text-2xl font-bold text-center text-white sm:text-4xl md:text-5xl lg:text-6xl font-inter md:leading-20"
           >
             Transform Your Resume With <br />
-            <span className="text-4xl text-transparent bg-linear-to-r from-purple-500 to-blue-600 bg-clip-text sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
-              AI Intelligence
+            <span className="text-4xl text-transparent bg-linear-to-r from-purple-500 to-blue-600 bg-clip-text sm:text-5xl md:text-6xl lg:text-7xl">
+              Artificial Intelligence
             </span>
           </motion.h1>
 
