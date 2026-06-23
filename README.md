@@ -30,7 +30,7 @@
 
 ## 💡 About The Project
 
-ResumeIQ is a **fictional SaaS product landing page** designed to mirror the quality and structure of real-world startup landing pages. The project covers a full user journey — from hero section to pricing, registration, and FAQ — with attention to responsiveness, animations, and user experience.
+ResumeIQ is a **fictional SaaS marketing landing page** designed to mirror the quality and structure of real-world startup landing pages. The project covers a full user journey — from hero section to pricing, registration, and FAQ — with attention to responsiveness, animations, and user experience.
 
 ---
 
