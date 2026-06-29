@@ -1,4 +1,4 @@
-# ResumeIQ — Fictional AI Resume Optimization SaaS Landing Page 📝🧠
+# ResumeIQ — Fictional Resume Optimization SaaS Landing Page 📝🧠
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat&logo=vite)
